@@ -1,0 +1,30 @@
+# ✅ Dependências
+node_modules/
+
+# ✅ Build / Output
+dist/
+build/
+
+# ✅ Arquivos de logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ✅ Cache do Vite / Tailwind
+.vite/
+.cache/
+.temp/
+
+# ✅ Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# ✅ Configurações locais do editor
+.vscode/
+.idea/
+
+# ✅ Arquivos de ambiente (NUNCA subir tokens ou senhas)
+.env
+.env.local
+.env.*.local

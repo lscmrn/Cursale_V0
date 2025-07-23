@@ -1,9 +1,23 @@
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import SellerFeatures from "./components/SellerFeatures";
+import CursaleInAction from "./components/CursaleInAction";
+import Strategies from "./components/Strategies";
+import CompleteSolutions from "./components/CompleteSolutions";
+
 export default function App() {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">
-        React + Vite + Tailwind + ESLint + Prettier
-      </h1>
-    </div>
+    <>
+      <Header />
+      <main className="pt-20">
+        <Hero />
+        <Features />
+        <SellerFeatures />
+        <Strategies />
+        <CursaleInAction />
+        <CompleteSolutions />
+      </main>
+    </>
   );
 }

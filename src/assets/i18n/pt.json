@@ -1,7 +1,25 @@
 {
     "header": {
-        "signIn": "Entrar",
-        "signUp": "Cadastrar"
+        "nav": {
+            "about": "Sobre",
+            "testimonials": "Depoimentos",
+            "faqs": "Perguntas Frequentes",
+            "contact": "Contato",
+            "more": "Mais",
+            "features": "Recursos",
+            "advantages": "Vantagens",
+            "howItWorks": "Como Funciona",
+            "secondaryCta": "Chamada Secundária"
+        },
+        "buttons": {
+            "signIn": "Entrar",
+            "signUp": "Cadastrar"
+        }
+    },
+    "languages": {
+        "en": "Inglês",
+        "pt": "Português",
+        "es": "Espanhol"
     },
     "footer": {
         "links": {

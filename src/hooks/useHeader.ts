@@ -22,8 +22,19 @@ export function useHeader() {
         if (section) section.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const mainNavItems = ['About', 'Testimonials', 'FAQs', 'Contact'];
-    const dropdownItems = ['Features', 'Advantages', 'How It Works', 'Secondary CTA'];
+    const mainNavItems = [
+        { key: 'about', id: 'about' },
+        { key: 'testimonials', id: 'testimonials' },
+        { key: 'faqs', id: 'faqs' },
+        { key: 'contact', id: 'contact' },
+    ];
+
+    const dropdownItems = [
+        { key: 'features', id: 'features' },
+        { key: 'advantages', id: 'advantages' },
+        { key: 'howItWorks', id: 'how-it-works' },
+        { key: 'secondaryCta', id: 'secondary-cta' },
+    ];
 
     return {
         scrolled,

@@ -1,7 +1,25 @@
 {
     "header": {
-        "signIn": "Sign In",
-        "signUp": "Sign Up"
+        "nav": {
+            "about": "About",
+            "testimonials": "Testimonials",
+            "faqs": "FAQs",
+            "contact": "Contact",
+            "more": "More",
+            "features": "Features",
+            "advantages": "Advantages",
+            "howItWorks": "How It Works",
+            "secondaryCta": "Secondary CTA"
+        },
+        "buttons": {
+            "signIn": "Sign In",
+            "signUp": "Sign Up"
+        }
+    },
+    "languages": {
+        "en": "English",
+        "pt": "Portuguese",
+        "es": "Spanish"
     },
     "footer": {
         "links": {

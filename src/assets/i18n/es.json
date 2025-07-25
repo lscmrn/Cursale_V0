@@ -1,7 +1,25 @@
 {
     "header": {
-        "signIn": "Iniciar sesión",
-        "signUp": "Registrarse"
+        "nav": {
+            "about": "Acerca de",
+            "testimonials": "Testimonios",
+            "faqs": "Preguntas Frecuentes",
+            "contact": "Contacto",
+            "more": "Más",
+            "features": "Funciones",
+            "advantages": "Ventajas",
+            "howItWorks": "Cómo Funciona",
+            "secondaryCta": "Llamada Secundaria"
+        },
+        "buttons": {
+            "signIn": "Iniciar sesión",
+            "signUp": "Registrarse"
+        }
+    },
+    "languages": {
+        "en": "Inglés",
+        "pt": "Portugués",
+        "es": "Español"
     },
     "footer": {
         "links": {

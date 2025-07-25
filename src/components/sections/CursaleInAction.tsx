@@ -9,7 +9,7 @@ export default function CursaleInAction() {
     return (
         <section
             id="cursale-in-action"
-            className="bg-cursale-white py-12 md:py-16"
+            className="py-16"
         >
             <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 md:flex-row lg:gap-12">
                 <motion.div

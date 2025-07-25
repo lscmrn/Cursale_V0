@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import LogoHeader from '@/assets/images/logo-header.png';
-import LogoHeaderLight from '@/assets/images/logo-light.png';
+import LogoHeaderGradient from '@/assets/images/logo-gradient.png';
 import { useHeader } from '@/hooks/useHeader';
 import { Button } from '@/ui/Button';
 import { Dropdown } from '@/ui/Dropdown';
@@ -19,40 +19,38 @@ export default function Header(): JSX.Element {
 
     return (
         <header
-            className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-                scrolled ? 'bg-cursale-blue-900 shadow-md' : 'bg-cursale-blue-100'
-            }`}
+            className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-all duration-500 
+                ${
+                    scrolled
+                        ? 'border-cursale-white/40 bg-cursale-blue-50/70 shadow-md'
+                        : 'border-cursale-white/30 bg-gradient-to-r from-cursale-blue-50/80 via-cursale-gray-50/60 to-cursale-gray-100/70 shadow-md'
+                }`}
         >
-            <div className="mx-auto flex w-full max-w-full items-center justify-between p-4">
-                {/* ✅ Logo */}
+            <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-4 py-3 md:px-6 lg:px-8">
                 <a
                     onClick={scrollToTop}
-                    className="flex cursor-pointer items-center space-x-2"
+                    className="flex cursor-pointer items-center space-x-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400"
                 >
                     <img
-                        src={scrolled ? LogoHeaderLight : LogoHeader}
+                        src={scrolled ? LogoHeaderGradient : LogoHeader}
                         alt="Cursale Logo"
                         className="h-8 w-auto transition-all duration-500 md:h-12 lg:h-14 2xl:h-16"
                     />
                 </a>
-
-                {/* ✅ Desktop Navigation */}
                 <nav
                     className={`hidden grow justify-center space-x-6 font-rubik transition-colors duration-500 md:flex ${
-                        scrolled ? 'text-cursale-blue-100' : 'text-cursale-blue-900'
+                        scrolled ? 'text-cursale-blue-800' : 'text-cursale-blue-900'
                     }`}
                 >
                     {mainNavItems.map((item) => (
                         <button
                             key={item}
                             onClick={() => scrollToSection(item.toLowerCase().replace(/\s+/g, '-'))}
-                            className="text-sm font-semibold transition hover:text-cursale-blue-300 hover:underline md:text-base lg:text-lg 2xl:text-xl"
+                            className="relative rounded-md text-sm font-semibold transition-all hover:text-cursale-orange-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 md:text-base lg:text-lg 2xl:text-xl"
                         >
                             {item}
                         </button>
                     ))}
-
-                    {/* ✅ Dropdown usando o novo componente */}
                     <Dropdown
                         label="More"
                         scrolled={scrolled}
@@ -63,19 +61,26 @@ export default function Header(): JSX.Element {
                         }))}
                     />
                 </nav>
-
-                {/* ✅ Desktop Buttons */}
                 <div className="hidden space-x-3 md:flex">
-                    <Button variant={scrolled ? 'outline' : 'secondary'}>Sign In</Button>
-                    <Button variant="primary">Sign Up</Button>
+                    <Button
+                        variant={scrolled ? 'outline' : 'secondary'}
+                        className="transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400"
+                    >
+                        Sign In
+                    </Button>
+                    <Button
+                        variant={scrolled ? 'primary' : 'gradient'}
+                        className="bg-gradient-ia text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-blue-50"
+                    >
+                        Sign Up
+                    </Button>
                 </div>
-
-                {/* ✅ Mobile Menu Toggle */}
                 <button
-                    className={`transition-colors md:hidden ${
-                        scrolled ? 'text-white' : 'text-cursale-blue-900'
+                    className={`rounded-md p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 md:hidden ${
+                        scrolled ? 'text-cursale-blue-900' : 'text-cursale-blue-900'
                     }`}
                     onClick={toggleMenu}
+                    aria-label="Toggle menu"
                 >
                     {menuOpen ? (
                         <svg
@@ -116,8 +121,8 @@ export default function Header(): JSX.Element {
                 <div
                     className={`flex max-h-screen flex-col items-center space-y-4 py-4 font-rubik transition-all duration-500 md:hidden ${
                         scrolled
-                            ? 'bg-cursale-blue-900 text-white'
-                            : 'bg-cursale-blue-100 text-cursale-blue-900'
+                            ? 'bg-white/80 text-cursale-blue-900'
+                            : 'bg-white/70 text-cursale-blue-900'
                     }`}
                 >
                     {[...mainNavItems, ...dropdownItems].map((item) => (
@@ -127,16 +132,17 @@ export default function Header(): JSX.Element {
                                 scrollToSection(item.toLowerCase().replace(/\s+/g, '-'));
                                 closeMenu();
                             }}
-                            className="text-base font-semibold transition hover:text-cursale-blue-300 hover:underline"
+                            className="rounded-md text-base font-semibold transition hover:text-cursale-orange-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400"
                         >
                             {item}
                         </button>
                     ))}
-                    <div className="flex flex-col space-y-2">
+                    <div className="flex w-full max-w-xs flex-col space-y-2">
                         <Button
                             variant={scrolled ? 'outline' : 'secondary'}
                             fullWidth
                             onClick={closeMenu}
+                            className="transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400"
                         >
                             Sign In
                         </Button>
@@ -144,6 +150,7 @@ export default function Header(): JSX.Element {
                             variant="primary"
                             fullWidth
                             onClick={closeMenu}
+                            className="bg-gradient-to-r from-cursale-orange-200 via-cursale-orange-300 to-cursale-orange-400 text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400"
                         >
                             Sign Up
                         </Button>

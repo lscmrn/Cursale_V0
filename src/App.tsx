@@ -11,7 +11,7 @@ import Header from './layout/Header';
 
 export default function App() {
     return (
-        <>
+        <div className="bg-cursale">
             <Header />
             <main className="overflow-x-hidden">
                 <section id="about">
@@ -47,6 +47,6 @@ export default function App() {
                 </section>
             </main>
             <Footer />
-        </>
+        </div>
     );
 }

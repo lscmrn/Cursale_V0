@@ -8,7 +8,7 @@ export default function SecondaryCTA() {
     return (
         <section
             id="secondary-cta"
-            className="relative overflow-hidden bg-gradient-to-br from-cursale-blue-900 to-cursale-blue-700 py-16"
+            className="py-16"
         >
             <div className="mx-auto max-w-4xl px-4 text-center">
                 <motion.h2

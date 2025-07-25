@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/enforces-negative-arbitrary-values */
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/images/hero.png';
 import CountUp from 'react-countup';
@@ -10,8 +11,8 @@ export default function Hero() {
     return (
         <>
             <section
-                id="hero"
-                className="relative z-[3] w-full bg-gradient-to-br from-slate-50 to-slate-100 pb-[80px] pt-[140px] sm:mb-[50px] md:py-[80px] lg:pb-[100px] lg:pt-[130px]"
+                id="about"
+                className="pt-[140px] sm:mb-[50px] md:py-[80px] lg:pb-[100px] lg:pt-[130px]"
             >
                 <div className="mx-auto max-w-7xl px-4">
                     <div className="-mx-3 flex flex-wrap items-center">
@@ -31,7 +32,7 @@ export default function Hero() {
                                 actually close deals.
                             </p>
                             <Button
-                                variant="primary"
+                                variant="gradient"
                                 onClick={scrollToCta}
                             >
                                 Get started for free
@@ -64,18 +65,6 @@ export default function Hero() {
                             </div>
                         </motion.div>
                     </div>
-                </div>
-                <div className="absolute bottom-0 left-0 w-full">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 1440 170"
-                    >
-                        <path
-                            fill="#fff"
-                            fillOpacity="1"
-                            d="M0,160L120,160C240,160,480,160,720,138.7C960,117,1200,75,1320,53.3L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-                        ></path>
-                    </svg>
                 </div>
             </section>
             <div className="-mt-[60px] flex flex-row items-center justify-center bg-white py-12 text-6xl">

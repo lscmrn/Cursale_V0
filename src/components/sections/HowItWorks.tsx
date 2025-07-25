@@ -8,7 +8,7 @@ export default function HowItWorks() {
     return (
         <section
             id="how-it-works"
-            className="bg-cursale-blue-50 py-16"
+            className="py-16"
         >
             <div className="mx-auto max-w-6xl px-4 text-center">
                 <motion.h2

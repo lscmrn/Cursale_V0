@@ -8,8 +8,7 @@ export default function Testimonials() {
     return (
         <section
             id="testimonials"
-            className="relative overflow-hidden bg-[url('/src/assets/images/background-curve.svg')] bg-gradient-to-br from-cursale-blue-50 
-                 to-cursale-blue-100 bg-cover bg-top bg-no-repeat py-16"
+            className="py-16"
         >
             <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
                 <motion.h2

@@ -8,7 +8,7 @@ export default function FAQ() {
     return (
         <section
             id="faq"
-            className="bg-gradient-to-br from-cursale-blue-50 to-cursale-blue-100 py-16"
+            className="py-16"
         >
             <div className="mx-auto max-w-3xl px-4">
                 <h2 className="mb-10 text-center text-3xl font-bold text-cursale-blue-900 md:text-4xl">

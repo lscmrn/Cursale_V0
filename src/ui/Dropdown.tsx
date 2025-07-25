@@ -26,7 +26,6 @@ export function Dropdown({ label, items, scrolled, variant = 'secondary' }: Drop
 
     return (
         <div className="relative">
-            {/* ✅ Usa o mesmo Button do design system */}
             <Button
                 variant={variant}
                 onClick={toggle}
@@ -45,15 +44,15 @@ export function Dropdown({ label, items, scrolled, variant = 'secondary' }: Drop
                         transition={{ duration: 0.2 }}
                         className={`absolute right-0 mt-2 w-44 rounded-md shadow-lg ${
                             scrolled
-                                ? 'bg-cursale-blue-800 text-white'
-                                : 'bg-cursale-blue-100 text-cursale-blue-900'
+                                ? 'bg-gradient-orange-100 text-white'
+                                : 'bg-gradient-orange-100 text-cursale-blue-900'
                         }`}
                     >
                         {items.map((item) => (
                             <Button
                                 key={item.label}
                                 variant="ghost"
-                                className="block w-full px-4 py-2 text-left text-sm hover:bg-cursale-blue-300 hover:text-white"
+                                className="block w-full px-4 py-2 text-left text-sm hover:bg-cursale-blue-50 hover:text-cursale-orange-500"
                                 onClick={() => handleItemClick(item.onClick)}
                             >
                                 {item.label}

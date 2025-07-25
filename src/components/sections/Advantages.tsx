@@ -7,7 +7,7 @@ export default function Advantages() {
     return (
         <section
             id="advantages"
-            className="relative overflow-hidden bg-gradient-to-br from-cursale-blue-50 to-cursale-blue-100 py-16"
+            className="py-16"
         >
             <div className="mx-auto max-w-6xl px-4 text-center">
                 <motion.h2

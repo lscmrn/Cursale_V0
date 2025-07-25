@@ -1,10 +1,13 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
-import SellerFeatures from "./components/SellerFeatures";
 import CursaleInAction from "./components/CursaleInAction";
-import Strategies from "./components/Strategies";
-import CompleteSolutions from "./components/CompleteSolutions";
+import HowItWorks from "./components/HowItWorks";
+import Testimonials from "./components/Testimonials";
+import Advantages from "./components/Advantages";
+import SecondaryCTA from "./components/SecondaryCTA";
+import Faq from "./components/Faq";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -13,11 +16,14 @@ export default function App() {
       <main>
         <Hero />
         <Features />
-        <SellerFeatures />
-        <Strategies />
         <CursaleInAction />
-        <CompleteSolutions />
+        <HowItWorks />
+        <Testimonials />
+        <Advantages />
+        <SecondaryCTA />
+        <Faq />
       </main>
+      <Footer />
     </>
   );
 }

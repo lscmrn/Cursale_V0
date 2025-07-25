@@ -1,0 +1,40 @@
+import { useState, useEffect } from 'react';
+
+export function useHeader() {
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 50);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const toggleMenu = () => setMenuOpen((prev) => !prev);
+    const closeMenu = () => setMenuOpen(false);
+    const toggleDropdown = () => setDropdownOpen((prev) => !prev);
+
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const mainNavItems = ['About', 'Testimonials', 'FAQs', 'Contact'];
+    const dropdownItems = ['Features', 'Advantages', 'How It Works', 'Secondary CTA'];
+
+    return {
+        scrolled,
+        menuOpen,
+        dropdownOpen,
+        toggleMenu,
+        toggleDropdown,
+        closeMenu,
+        scrollToSection,
+        scrollToTop,
+        mainNavItems,
+        dropdownItems,
+    };
+}

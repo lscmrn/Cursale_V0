@@ -8,9 +8,9 @@ export default function FAQ() {
     return (
         <section
             id="faq"
-            className="py-16"
+            className="relative w-full py-[100px] md:py-[120px]"
         >
-            <div className="mx-auto max-w-3xl px-4">
+            <div className="max-w73xl mx-auto px-4">
                 <h2 className="mb-10 text-center text-3xl font-bold text-cursale-blue-900 md:text-4xl">
                     Frequently Asked <span className="text-cursale-orange-900">Questions</span>
                 </h2>
@@ -23,7 +23,7 @@ export default function FAQ() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.3 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="overflow-hidden rounded-xl bg-white shadow-md"
+                            className="overflow-hidden rounded-xl bg-gradient-blue-50 shadow-md"
                         >
                             <button
                                 onClick={() => toggleFAQ(index)}

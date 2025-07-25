@@ -8,24 +8,24 @@ export default function Testimonials() {
     return (
         <section
             id="testimonials"
-            className="py-16"
+            className="relative w-full py-[100px] md:py-[120px]"
         >
-            <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
+            <div className="relative mx-auto max-w-7xl px-4 text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false, amount: 0.3 }}
-                    className="mb-10 text-3xl font-bold text-cursale-blue-900 md:text-4xl"
+                    className="mb-10 text-3xl font-bold text-cursale-orange-500 md:text-4xl"
                 >
                     Who uses it,{' '}
-                    <span className="text-cursale-orange-900">never sells without it again</span>
+                    <span className="text-cursale-blue-900">never sells without it again</span>
                 </motion.h2>
 
                 <motion.div
                     drag="x"
                     dragConstraints={{ left: -300, right: 0 }}
-                    className="flex cursor-grab gap-6 active:cursor-grabbing"
+                    className="flex cursor-grab gap-6 p-10 active:cursor-grabbing"
                 >
                     {testimonials.map((item, index) => (
                         <motion.div

@@ -11,8 +11,8 @@ export default function Hero() {
     return (
         <>
             <section
-                id="about"
-                className="pt-[140px] sm:mb-[50px] md:py-[80px] lg:pb-[100px] lg:pt-[130px]"
+                id="hero"
+                className="relative w-full py-[100px] md:py-[120px]"
             >
                 <div className="mx-auto max-w-7xl px-4">
                     <div className="-mx-3 flex flex-wrap items-center">
@@ -66,19 +66,21 @@ export default function Hero() {
                         </motion.div>
                     </div>
                 </div>
+                <div className="flex flex-row items-center justify-center text-6xl">
+                    <p className="font-bold text-gray-800">
+                        {countUpStart && (
+                            <CountUp
+                                end={50}
+                                duration={2}
+                            />
+                        )}
+                        %
+                    </p>
+                    <p className="ml-2 text-center text-2xl text-gray-600">
+                        More sales conversions
+                    </p>
+                </div>
             </section>
-            <div className="-mt-[60px] flex flex-row items-center justify-center bg-white py-12 text-6xl">
-                <p className="font-bold text-gray-800">
-                    {countUpStart && (
-                        <CountUp
-                            end={50}
-                            duration={2}
-                        />
-                    )}
-                    %
-                </p>
-                <p className="ml-2 text-center text-2xl text-gray-600">More sales conversions</p>
-            </div>
         </>
     );
 }

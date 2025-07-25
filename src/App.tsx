@@ -11,42 +11,35 @@ import Header from './layout/Header';
 
 export default function App() {
     return (
-        <div className="bg-cursale">
+        <>
             <Header />
-            <main className="overflow-x-hidden">
+            <main className="min-h-screen w-full bg-cursale bg-cover bg-fixed bg-center bg-no-repeat text-cursale-blue-900">
                 <section id="about">
                     <Hero />
                 </section>
-
                 <section id="features">
                     <Features />
                 </section>
-
                 <section id="cursale-in-action">
                     <CursaleInAction />
                 </section>
-
                 <section id="how-it-works">
                     <HowItWorks />
                 </section>
-
                 <section id="testimonials">
                     <Testimonials />
                 </section>
-
                 <section id="advantages">
                     <Advantages />
                 </section>
-
                 <section id="secondary-cta">
                     <SecondaryCTA />
                 </section>
-
                 <section id="faqs">
                     <FAQ />
                 </section>
             </main>
             <Footer />
-        </div>
+        </>
     );
 }

@@ -9,9 +9,9 @@ export default function CursaleInAction() {
     return (
         <section
             id="cursale-in-action"
-            className="py-16"
+            className="relative w-full py-[100px] md:py-[120px]"
         >
-            <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 md:flex-row lg:gap-12">
+            <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 md:flex-row lg:gap-12">
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -22,7 +22,7 @@ export default function CursaleInAction() {
                     <img
                         src={cursaleInAction}
                         alt="Cursale in action"
-                        className="relative z-10 w-full max-w-sm rounded-lg shadow-lg sm:max-w-md md:max-w-full"
+                        className="relative z-10 w-full max-w-md rounded-lg object-contain shadow-lg md:max-w-[90%] lg:max-w-[80%]"
                     />
                 </motion.div>
 
@@ -33,7 +33,7 @@ export default function CursaleInAction() {
                     viewport={{ once: false, amount: 0.3 }}
                     className="p-2 text-left md:w-1/2 md:p-4"
                 >
-                    <p className="md:text-md mb-2 text-sm uppercase tracking-wide text-cursale-orange-900 md:mb-3">
+                    <p className="md:text-md mb-2 text-sm uppercase tracking-wide text-cursale-orange-500 md:mb-3">
                         Cursale in action
                     </p>
                     <h2 className="mb-6 text-2xl font-bold leading-snug text-cursale-blue-900 sm:text-3xl md:mb-8 md:text-4xl lg:mb-12">
@@ -47,7 +47,7 @@ export default function CursaleInAction() {
                             <span className="font-bold text-cursale-blue-900">
                                 Cursale steps in when you need it most:
                             </span>{' '}
-                            <span className="font-semibold text-cursale-blue-500">
+                            <span className="font-semibold text-cursale-orange-500">
                                 during the real conversation with your client.
                             </span>
                         </p>
@@ -57,7 +57,7 @@ export default function CursaleInAction() {
                         whileTap={{ scale: 0.95 }}
                     >
                         <Button
-                            variant="primary"
+                            variant="gradient"
                             onClick={scrollToCta}
                         >
                             Get started for free

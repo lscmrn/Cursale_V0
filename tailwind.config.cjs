@@ -52,6 +52,9 @@ module.exports = {
         },
       },
       backgroundImage: {
+        "gradient-blue-50": "linear-gradient(-30deg, #ECF1FE, #F3F4F6, #FFFFFF)",
+        "gradient-blue-500": "linear-gradient(-45deg, #0F48F6, #0F48F6, #406DF8)",
+        "gradient-blue-700": "linear-gradient(-30deg, #041C68, #062A99, #0737CB)",
         "gradient-orange-100": "linear-gradient(to right, #FFEBE5, #FFD7CC)",
         "gradient-orange-500": "linear-gradient(-30deg, #ff4a0499 0%, #fa5300 40%, #db6643 100%)",
         "gradient-orange-700": "linear-gradient(to right, #FF5E33, #FF3600)",

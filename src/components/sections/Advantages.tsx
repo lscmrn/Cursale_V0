@@ -7,9 +7,9 @@ export default function Advantages() {
     return (
         <section
             id="advantages"
-            className="py-16"
+            className="relative w-full py-[100px] md:py-[120px]"
         >
-            <div className="mx-auto max-w-6xl px-4 text-center">
+            <div className="mx-auto max-w-7xl px-4 text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -17,12 +17,12 @@ export default function Advantages() {
                     transition={{ duration: 0.6 }}
                     className="mb-12 text-3xl font-bold text-cursale-blue-900 md:text-4xl"
                 >
-                    Real <span className="text-cursale-orange-900">advantages</span> for your team
+                    Real <span className="text-cursale-orange-500">advantages</span> for your team
                 </motion.h2>
 
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {items.map((item, index) => {
-                        const Icon = item.icon; // ✅ instanciando o ícone corretamente
+                        const Icon = item.icon;
                         return (
                             <motion.div
                                 key={item.text}
@@ -36,13 +36,13 @@ export default function Advantages() {
                                     stiffness: 120,
                                 }}
                                 whileHover={{ scale: 1.05 }}
-                                className="flex flex-col items-center rounded-2xl bg-gradient-to-br from-cursale-blue-900 to-cursale-blue-700 
-                           p-6 text-center text-cursale-blue-50 shadow-lg shadow-cursale-blue-500/30"
+                                className="flex flex-col items-center rounded-2xl bg-gradient-blue-50
+                                p-6 text-center text-cursale-orange-600 shadow-lg shadow-cursale-blue-800/30"
                             >
                                 <motion.div
                                     whileHover={{ rotate: 5, scale: 1.2 }}
                                     transition={{ type: 'spring', stiffness: 200 }}
-                                    className="mb-4 text-4xl text-cursale-blue-200"
+                                    className="mb-4 text-4xl text-cursale-blue-700"
                                 >
                                     <Icon />
                                 </motion.div>

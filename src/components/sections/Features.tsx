@@ -7,13 +7,13 @@ export default function Features() {
     return (
         <section
             id="features"
-            className="py-16"
+            className="relative w-full py-[100px] md:py-[120px]"
         >
-            <div className="mx-auto max-w-6xl px-4 text-center">
+            <div className="mx-auto max-w-7xl px-4 text-center">
                 <h2 className="mb-3 font-jakarta text-4xl font-bold text-cursale-blue-900 md:text-5xl">
                     Main Features
                 </h2>
-                <p className="mb-12 text-2xl text-cursale-blue-700">
+                <p className="mb-12 text-2xl text-cursale-orange-800">
                     Everything the seller needs. Where they need it most.
                 </p>
                 <div className="grid grid-cols-1 gap-8 text-left md:grid-cols-2">
@@ -28,7 +28,7 @@ export default function Features() {
                                 ease: 'easeOut',
                             }}
                             viewport={{ once: false, amount: 0.3 }}
-                            className="flex items-center space-x-3 rounded-2xl bg-gradient-to-br from-cursale-blue-900 to-cursale-blue-500 p-2 shadow-lg shadow-cursale-blue-100/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cursale-blue-300/50"
+                            className="flex items-center space-x-3 rounded-2xl bg-gradient-blue-50 p-2 shadow-lg shadow-cursale-blue-100/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cursale-blue-300/50"
                         >
                             <div className="flex h-36 w-36 items-center justify-center bg-transparent">
                                 <img
@@ -38,10 +38,10 @@ export default function Features() {
                                 />
                             </div>
                             <div>
-                                <h3 className="mb-1 text-2xl font-bold text-cursale-blue-100">
+                                <h3 className="mb-1 text-2xl font-bold text-cursale-blue-800">
                                     {feature.title}
                                 </h3>
-                                <p className="font-rubik text-sm leading-relaxed text-cursale-blue-50">
+                                <p className="font-rubik text-sm leading-relaxed text-cursale-orange-900">
                                     {feature.description}
                                 </p>
                             </div>

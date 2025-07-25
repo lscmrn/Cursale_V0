@@ -2,14 +2,12 @@ import { motion } from 'framer-motion';
 import LogoFooter from '@/assets/images/logo_icon.webp';
 import ReactCountryFlag from 'react-country-flag';
 import { useFooter } from '@/hooks/useFooter';
-
 export default function Footer() {
     const { year, links, scrollToSection } = useFooter();
-
     return (
-        <footer className="bg-gradient-to-r from-cursale-blue-50/80 via-cursale-gray-50/60 to-cursale-gray-100/70 py-10 shadow-md">
-            <div className="mx-auto max-w-7xl space-y-8 px-4">
-                <nav className="flex flex-wrap justify-center gap-6 text-sm font-medium text-cursale-blue-800">
+        <footer className="bg-gradient-to-r from-cursale-blue-50 via-cursale-gray-50 to-cursale-gray-100 py-6 sm:py-8 md:py-10 lg:py-12">
+            <div className="container space-y-4 sm:space-y-6">
+                <nav className="flex flex-wrap justify-center gap-3 text-[0.7rem] font-medium text-cursale-blue-800 sm:gap-4 sm:text-xs md:text-sm lg:text-base">
                     {links.map((link) => (
                         <button
                             key={link}
@@ -20,7 +18,7 @@ export default function Footer() {
                         </button>
                     ))}
                 </nav>
-                <p className="mx-auto max-w-3xl text-center text-xs leading-relaxed text-cursale-blue-400">
+                <p className="mx-auto max-w-3xl text-center text-[0.6rem] leading-relaxed text-cursale-blue-400 sm:text-[0.7rem] md:text-xs lg:text-sm">
                     Cursale is your <strong>AI sales copilot</strong>. Boost{' '}
                     <strong>B2B sales conversion</strong>, handle{' '}
                     <strong>objections with AI</strong>, and get{' '}
@@ -29,24 +27,23 @@ export default function Footer() {
                     <strong>GPT sales extension</strong>, and automates <strong>follow-ups</strong>{' '}
                     to improve inside sales performance.
                 </p>
-                <div className="flex items-center justify-between border-t border-cursale-gray-200 pt-6">
-                    {/* LOGO E COPYRIGHT */}
+                <div className="flex flex-col items-center justify-between space-y-3 border-t border-cursale-gray-200 pt-3 sm:space-y-4 sm:pt-4 md:flex-row md:space-y-0">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5 }}
-                        className="flex items-center space-x-2"
+                        className="flex items-center space-x-1 sm:space-x-2"
                     >
                         <img
                             src={LogoFooter}
                             alt="Cursale Logo"
-                            className="h-6 w-auto md:h-8 lg:h-10"
+                            className="h-4 w-auto sm:h-5 md:h-6 lg:h-8"
                         />
-                        <h3 className="text-sm font-bold text-cursale-blue-800">
+                        <h3 className="text-[0.65rem] font-bold text-cursale-blue-800 sm:text-xs md:text-sm lg:text-base">
                             Cursale - The AI Sales Copilot -
                         </h3>
-                        <p className="text-xs text-cursale-orange-400">
+                        <p className="text-[0.55rem] text-cursale-orange-400 sm:text-[0.65rem] md:text-xs lg:text-sm">
                             © {year} • All rights reserved
                         </p>
                     </motion.div>
@@ -55,38 +52,21 @@ export default function Footer() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex gap-3"
+                        className="flex gap-2 sm:gap-3 md:gap-4"
                     >
-                        <button
-                            className="transition hover:scale-110"
-                            title="English"
-                        >
-                            <ReactCountryFlag
-                                countryCode="US"
-                                svg
-                                style={{ width: '1.5em', height: '1.5em' }}
-                            />
-                        </button>
-                        <button
-                            className="transition hover:scale-110"
-                            title="Português"
-                        >
-                            <ReactCountryFlag
-                                countryCode="BR"
-                                svg
-                                style={{ width: '1.5em', height: '1.5em' }}
-                            />
-                        </button>
-                        <button
-                            className="transition hover:scale-110"
-                            title="Español"
-                        >
-                            <ReactCountryFlag
-                                countryCode="ES"
-                                svg
-                                style={{ width: '1.5em', height: '1.5em' }}
-                            />
-                        </button>
+                        {['US', 'BR', 'ES'].map((country) => (
+                            <button
+                                key={country}
+                                className="transition hover:scale-110"
+                                title={country}
+                            >
+                                <ReactCountryFlag
+                                    countryCode={country}
+                                    svg
+                                    className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-12 lg:w-12"
+                                />
+                            </button>
+                        ))}
                     </motion.div>
                 </div>
             </div>

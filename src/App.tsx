@@ -8,38 +8,61 @@ import SecondaryCTA from './components/sections/SecondaryCTA';
 import Testimonials from './components/sections/Testimonials';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
-
 export default function App() {
     return (
-        <>
+        <div className="min-h-screen w-full bg-cursale bg-cover bg-fixed bg-center bg-no-repeat text-cursale-blue-900">
             <Header />
-            <main className="min-h-screen w-full bg-cursale bg-cover bg-fixed bg-center bg-no-repeat text-cursale-blue-900">
-                <section id="about">
+            <main className="overflow-x-hidden">
+                <section
+                    id="about"
+                    className="container"
+                >
                     <Hero />
                 </section>
-                <section id="features">
+                <section
+                    id="features"
+                    className="container"
+                >
                     <Features />
                 </section>
-                <section id="cursale-in-action">
+                <section
+                    id="cursale-in-action"
+                    className="container"
+                >
                     <CursaleInAction />
                 </section>
-                <section id="how-it-works">
+                <section
+                    id="how-it-works"
+                    className="container"
+                >
                     <HowItWorks />
                 </section>
-                <section id="testimonials">
+                <section
+                    id="testimonials"
+                    className="container"
+                >
                     <Testimonials />
                 </section>
-                <section id="advantages">
+                <section
+                    id="advantages"
+                    className="container"
+                >
                     <Advantages />
                 </section>
-                <section id="secondary-cta">
+                <section
+                    id="secondary-cta"
+                    className="container"
+                >
                     <SecondaryCTA />
                 </section>
-                <section id="faqs">
+                <section
+                    id="faqs"
+                    className="container"
+                >
                     <FAQ />
                 </section>
             </main>
             <Footer />
-        </>
+        </div>
     );
 }

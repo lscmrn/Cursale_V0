@@ -5,6 +5,26 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1rem',
+        md: '1.5rem',
+        lg: '2rem',
+        xl: '2.5rem',
+        '2xl': '3rem',
+      },
+      screens: {
+        xs: "100%",
+        sm: "100%",
+        md: "100%",
+        lg: "100%",
+        xl: "100%",
+        "2xl": "100%",
+        "3xl": "100%"
+      },
+    },
     extend: {
       fontFamily: {
         jakarta: ['Plus Jakarta Sans', 'sans-serif'],
@@ -60,26 +80,27 @@ module.exports = {
         "gradient-orange-700": "linear-gradient(to right, #FF5E33, #FF3600)",
         "gradient-ia-100": "linear-gradient(to right, #e7e5ff, #FFD7CC)",
         "gradient-ia": "linear-gradient(-30deg, #baa7d399 0%, #9000fa 40%, #db4395 100%)",
-        'cursale': "url('/src/assets/images/bg-cursale.png')"
+        "cursale": "url('/src/assets/images/bg-cursale.png')"
       },
       fontSize: {
-        "xs": ["0.75rem", "1rem"], // 12px
-        "sm": ["0.875rem", "1.25rem"], // 14px
-        "base": ["1rem", "1.5rem"], // 16px
-        "lg": ["1.125rem", "1.75rem"], // 18px
-        "xl": ["1.25rem", "1.75rem"], // 20px
-        "2xl": ["1.5rem", "2rem"], // 24px
-        "3xl": ["1.875rem", "2.25rem"], // 30px
-        "4xl": ["2.25rem", "2.5rem"], // 36px
-        "5xl": ["3rem", "1"], // 48px
+        "xs": ["clamp(0.7rem,0.6vw,0.75rem)","1rem"],
+        "sm": ["clamp(0.8rem,0.7vw,0.875rem)","1.25rem"],
+        "base": ["clamp(0.9rem,0.8vw,1rem)","1.5rem"],
+        "lg": ["clamp(1rem,1vw,1.125rem)","1.75rem"],
+        "xl": ["clamp(1.1rem,1.2vw,1.25rem)","1.75rem"],
+        "2xl": ["clamp(1.3rem,1.5vw,1.5rem)","2rem"],
+        "3xl": ["clamp(1.6rem,2vw,1.875rem)","2.25rem"],
+        "4xl": ["clamp(1.9rem,2.5vw,2.25rem)","2.5rem"],
+        "5xl": ["clamp(2.5rem,3vw,3rem)","1"],
       },
       screens: {
-        "xs": "475px", // mobile pequeno
+        "xs": "320px",
         "sm": "640px",
         "md": "768px",
         "lg": "1024px",
         "xl": "1280px",
         "2xl": "1536px",
+        "3xl": "1900px"
       },
     },
   },

@@ -1,7 +1,12 @@
 export function useFooter() {
     const year = new Date().getFullYear();
 
-    const links = ['About', 'Pricing', 'Contact', 'Login'];
+    const links = [
+        { key: 'about', id: 'about' },
+        { key: 'pricing', id: 'pricing' },
+        { key: 'contact', id: 'contact' },
+        { key: 'login', id: 'login' },
+    ];
 
     const scrollToSection = (id: string) => {
         const section = document.getElementById(id);

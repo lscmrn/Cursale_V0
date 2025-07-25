@@ -1,0 +1,17 @@
+{
+    "header": {
+        "signIn": "Sign In",
+        "signUp": "Sign Up"
+    },
+    "footer": {
+        "links": {
+            "about": "About",
+            "pricing": "Pricing",
+            "contact": "Contact",
+            "login": "Login"
+        },
+        "description": "Cursale is your <strong>AI sales copilot</strong>. Boost <strong>B2B sales conversion</strong>, handle <strong>objections with AI</strong>, and get <strong>real-time suggestions</strong> during calls. Works as an <strong>AI-powered CRM assistant</strong>, a <strong>GPT sales extension</strong>, and automates <strong>follow-ups</strong> to improve inside sales performance.",
+        "rights": "All rights reserved",
+        "tagline": "Cursale - The AI Sales Copilot -"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "header": {
+        "signIn": "Entrar",
+        "signUp": "Cadastrar"
+    },
+    "footer": {
+        "links": {
+            "about": "Sobre",
+            "pricing": "Preços",
+            "contact": "Contato",
+            "login": "Entrar"
+        },
+        "description": "Cursale é seu <strong>copiloto de vendas com IA</strong>. Aumente <strong>as conversões B2B</strong>, lide com <strong>objeções usando IA</strong> e obtenha <strong>sugestões em tempo real</strong> durante as ligações. Funciona como um <strong>assistente de CRM com IA</strong>, uma <strong>extensão GPT de vendas</strong> e automatiza <strong>follow-ups</strong> para melhorar o desempenho.",
+        "rights": "Todos os direitos reservados",
+        "tagline": "Cursale - O Copiloto de Vendas com IA -"
+    }
+}

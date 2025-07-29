@@ -24,16 +24,15 @@ export function useHeader() {
 
     const mainNavItems = [
         { key: 'about', id: 'about' },
-        { key: 'testimonials', id: 'testimonials' },
-        { key: 'faqs', id: 'faqs' },
-        { key: 'contact', id: 'contact' },
-    ];
-
-    const dropdownItems = [
         { key: 'features', id: 'features' },
         { key: 'advantages', id: 'advantages' },
         { key: 'howItWorks', id: 'how-it-works' },
+    ];
+
+    const dropdownItems = [
         { key: 'secondaryCta', id: 'secondary-cta' },
+        { key: 'testimonials', id: 'testimonials' },
+        { key: 'faqs', id: 'faqs' },
     ];
 
     return {

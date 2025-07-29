@@ -10,7 +10,7 @@ import Footer from './layout/Footer';
 import Header from './layout/Header';
 export default function App() {
     return (
-        <div className="min-h-screen w-full bg-cursale bg-cover bg-fixed bg-center bg-no-repeat text-cursale-blue-900">
+        <div className="bg-gradient-cursale min-h-screen w-full text-cursale-blue-900">
             <Header />
             <main className="overflow-x-hidden">
                 <section

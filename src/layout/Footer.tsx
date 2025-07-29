@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import LogoFooter from '@/assets/images/logo_icon.webp';
+import LogoFooter from '@/assets/images/icons/cursale-icon.png';
 import ReactCountryFlag from 'react-country-flag';
 import { useFooter } from '@/hooks/useFooter';
 import { Translate } from '@/components/Translate';

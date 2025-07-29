@@ -13,7 +13,7 @@ type DropdownProps = {
     label: React.ReactNode;
     items: DropdownItem[];
     scrolled?: boolean;
-    variant?: 'primary' | 'secondary' | 'outline';
+    variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
 };
 
 export function Dropdown({ label, items, scrolled, variant = 'secondary' }: DropdownProps) {
@@ -62,21 +62,16 @@ export function Dropdown({ label, items, scrolled, variant = 'secondary' }: Drop
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className={`absolute right-0 mt-2 w-44 rounded-md shadow-lg ${
-                            scrolled
-                                ? 'bg-gradient-orange-100 text-white'
-                                : 'bg-gradient-orange-100 text-cursale-blue-900'
-                        }`}
+                        className={`absolute right-0 mt-2 w-44 rounded-md bg-white shadow-lg ring-1 ring-black/10`}
                     >
                         {items.map((item, index) => (
-                            <Button
+                            <button
                                 key={index}
-                                variant="ghost"
-                                className="block w-full px-4 py-2 text-left text-sm hover:bg-cursale-blue-50 hover:text-cursale-orange-500"
                                 onClick={() => handleItemClick(item.onClick)}
+                                className="w-full px-4 py-2 text-left text-sm text-ia-cyberpunk-darkBlue transition hover:bg-ia-cyberpunk-neonBlue hover:text-white"
                             >
                                 {item.label}
-                            </Button>
+                            </button>
                         ))}
                     </motion.div>
                 )}

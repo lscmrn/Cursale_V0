@@ -1,9 +1,9 @@
-import iconIA from '@/assets/images/icon_IA.webp';
-import iconCheck from '@/assets/images/icon-check.webp';
-import iconNormal from '@/assets/images/icon_normal.webp';
-import iconSound from '@/assets/images/icon_sound.webp';
-import iconMoney from '@/assets/images/icon_money.webp';
-import iconScared from '@/assets/images/icon_assustado.webp';
+import iconIA from '@/assets/images/icons/cursale-ai.png';
+import iconCheck from '@/assets/images/icons/cursale-check.png';
+import iconNormal from '@/assets/images/icons/cursale-icon.png';
+import iconSound from '@/assets/images/icons/cursale-sound.png';
+import iconMoney from '@/assets/images/icons/cursale-money.png';
+import iconScared from '@/assets/images/icons/cursale-scared.png';
 
 export function useFeatures() {
     const features = [

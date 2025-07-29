@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'gradient';
+    variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
     fullWidth?: boolean;
 };
 
@@ -13,17 +13,14 @@ export function Button({
     ...props
 }: ButtonProps) {
     const baseClasses =
-        'rounded-md font-bold transition duration-300 px-4 py-2 text-sm md:text-base lg:text-lg 2xl:text-xl';
+        'rounded-full font-bold transition duration-300 px-6 py-2 text-sm md:text-base lg:text-lg 2xl:text-xl shadow-md hover:shadow-lg';
 
     const variants = {
-        primary: 'bg-gradient-ia text-white hover:bg-cursale-white hover:text-cursale-orange-50',
-        secondary:
-            'bg-gradient-orange-100 text-cursale-blue-900 hover:bg-cursale-white hover:text-cursale-blue-900',
+        primary: 'bg-gradient-ia-mirror text-white hover:brightness-110',
+        secondary: 'bg-gradient-ia-futurist text-white hover:brightness-110',
+        tertiary: 'bg-gradient-ia-cyberpunk-neonBlue text-white hover:bg-ia-cyberpunk-neonBlue',
         outline:
-            'bg-gradient-ia-100 text-cursale-blue-900 hover:bg-cursale-orange-900 hover:text-cursale-blue-900',
-        gradient:
-            'bg-gradient-orange-700 text-cursale-blue-50 hover:bg-cursale-orange-900 hover:text-cursale-blue-900',
-        ghost: 'bg-transparent text-cursale-blue-900 hover:bg-cursale-blue-300 hover:text-cursale-blue-900',
+            'bg-gradient-ia-classic text-white hover:bg-ia-cyberpunk-neonBlue hover:text-white',
     };
 
     return (

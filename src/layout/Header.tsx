@@ -1,11 +1,10 @@
 import { JSX } from 'react';
-import LogoHeader from '@/assets/images/logo-header.png';
-import LogoHeaderGradient from '@/assets/images/logo-gradient.png';
+import LogoHeader from '@/assets/images/icons/cursale-header.png';
 import { useHeader } from '@/hooks/useHeader';
 import { Button } from '@/ui/Button';
 import { Dropdown } from '@/ui/Dropdown';
 import { Translate } from '@/components/Translate';
-import { LanguageDropdown } from '@/components/LanguageDropdown';
+
 export default function Header(): JSX.Element {
     const {
         scrolled,
@@ -17,34 +16,38 @@ export default function Header(): JSX.Element {
         mainNavItems,
         dropdownItems,
     } = useHeader();
+
     return (
         <header
-            className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-all duration-500 ${scrolled ? 'border-cursale-white/40 bg-cursale-blue-50/70 shadow-md' : 'border-cursale-white/30 bg-gradient-to-r from-cursale-blue-50/80 via-cursale-gray-50/60 to-cursale-gray-100/70 shadow-md'}`}
+            className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-all duration-500 ${
+                scrolled
+                    ? 'border-ia-cyberpunk-neonBlue/40 bg-white/70 shadow-md'
+                    : 'border-ia-cyberpunk-neonBlue/30 bg-gradient-ia-light shadow-md'
+            }`}
         >
             <div className="container flex items-center justify-between py-3">
                 <div className="flex items-center space-x-2">
                     <a
                         onClick={scrollToTop}
-                        className="flex cursor-pointer items-center space-x-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400"
+                        className="flex cursor-pointer items-center space-x-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-ia-cyberpunk-neonMagenta"
                     >
                         <img
-                            src={scrolled ? LogoHeaderGradient : LogoHeader}
+                            src={LogoHeader}
                             alt="Cursale Logo"
                             className="h-6 w-auto transition-all duration-500 sm:h-8 md:h-10 lg:h-12 xl:h-14 2xl:h-16"
                         />
                     </a>
-                    <div className="ml-2">
-                        <LanguageDropdown />
-                    </div>
                 </div>
                 <nav
-                    className={`hidden grow justify-center space-x-4 font-rubik transition-colors duration-500 sm:space-x-5 md:flex md:space-x-6 ${scrolled ? 'text-cursale-blue-800' : 'text-cursale-blue-900'}`}
+                    className={`hidden grow justify-center space-x-4 font-rubik transition-colors duration-500 sm:space-x-5 md:flex md:space-x-6 ${
+                        scrolled ? 'text-ia-cyberpunk-darkBlue' : 'text-ia-cyberpunk-darkBlue'
+                    }`}
                 >
                     {mainNavItems.map((item) => (
                         <button
                             key={item.key}
                             onClick={() => scrollToSection(item.id)}
-                            className="relative rounded-md text-xs font-semibold transition-all hover:text-cursale-orange-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 sm:text-sm md:text-base lg:text-lg 2xl:text-xl"
+                            className="relative rounded-md text-xs font-semibold transition-all hover:text-ia-cyberpunk-neonBlue hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-ia-cyberpunk-neonMagenta sm:text-sm md:text-base lg:text-lg 2xl:text-xl"
                         >
                             <Translate k={`header.nav.${item.key}`} />
                         </button>
@@ -52,7 +55,7 @@ export default function Header(): JSX.Element {
                     <Dropdown
                         label={<Translate k="header.nav.more" />}
                         scrolled={scrolled}
-                        variant={scrolled ? 'outline' : 'secondary'}
+                        variant={scrolled ? 'tertiary' : 'outline'}
                         items={dropdownItems.map((item) => ({
                             label: <Translate k={`header.nav.${item.key}`} />,
                             onClick: () => scrollToSection(item.id),
@@ -61,20 +64,16 @@ export default function Header(): JSX.Element {
                 </nav>
                 <div className="hidden space-x-2 sm:space-x-3 md:flex">
                     <Button
-                        variant={scrolled ? 'outline' : 'secondary'}
-                        className="text-xs transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 sm:text-sm md:text-base lg:text-lg"
-                    >
-                        <Translate k="header.buttons.signIn" />
-                    </Button>
-                    <Button
-                        variant={scrolled ? 'primary' : 'gradient'}
-                        className="bg-gradient-ia text-xs text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-blue-50 sm:text-sm md:text-base lg:text-lg"
+                        variant={scrolled ? 'primary' : 'secondary'}
+                        className="text-xs text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-ia-cyberpunk-neonBlue sm:text-sm md:text-base lg:text-lg"
                     >
                         <Translate k="header.buttons.signUp" />
                     </Button>
                 </div>
                 <button
-                    className={`rounded-md p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 md:hidden ${scrolled ? 'text-cursale-blue-900' : 'text-cursale-blue-900'}`}
+                    className={`rounded-md p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ia-cyberpunk-neonMagenta md:hidden ${
+                        scrolled ? 'text-ia-cyberpunk-darkBlue' : 'text-ia-cyberpunk-darkBlue'
+                    }`}
                     onClick={toggleMenu}
                     aria-label="Toggle menu"
                 >
@@ -113,7 +112,11 @@ export default function Header(): JSX.Element {
             </div>
             {menuOpen && (
                 <div
-                    className={`flex max-h-screen flex-col items-center space-y-3 py-4 font-rubik transition-all duration-500 sm:space-y-4 md:hidden ${scrolled ? 'bg-white/80 text-cursale-blue-900' : 'bg-white/70 text-cursale-blue-900'}`}
+                    className={`flex max-h-screen flex-col items-center space-y-3 py-4 font-rubik transition-all duration-500 sm:space-y-4 md:hidden ${
+                        scrolled
+                            ? 'bg-white/90 text-ia-cyberpunk-darkBlue'
+                            : 'bg-gradient-ia-light text-ia-cyberpunk-darkBlue'
+                    }`}
                 >
                     {[...mainNavItems, ...dropdownItems].map((item) => (
                         <button
@@ -122,25 +125,17 @@ export default function Header(): JSX.Element {
                                 scrollToSection(item.id);
                                 closeMenu();
                             }}
-                            className="rounded-md text-sm font-semibold transition hover:text-cursale-orange-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 sm:text-base"
+                            className="rounded-md text-sm font-semibold transition hover:text-ia-cyberpunk-neonBlue hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-ia-cyberpunk-neonMagenta sm:text-base"
                         >
                             <Translate k={`header.nav.${item.key}`} />
                         </button>
                     ))}
                     <div className="flex w-full max-w-xs flex-col space-y-2">
                         <Button
-                            variant={scrolled ? 'outline' : 'secondary'}
-                            fullWidth
-                            onClick={closeMenu}
-                            className="text-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 sm:text-base"
-                        >
-                            <Translate k="header.buttons.signIn" />
-                        </Button>
-                        <Button
                             variant="primary"
                             fullWidth
                             onClick={closeMenu}
-                            className="bg-gradient-to-r from-cursale-orange-200 via-cursale-orange-300 to-cursale-orange-400 text-sm text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cursale-orange-400 sm:text-base"
+                            className="text-sm text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-ia-cyberpunk-neonBlue sm:text-base"
                         >
                             <Translate k="header.buttons.signUp" />
                         </Button>

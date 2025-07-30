@@ -10,11 +10,10 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="w-full py-12 sm:py-16 md:py-20 lg:py-28"
+            className="w-full py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32"
         >
             <div className="container">
                 <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
-                    {/* Texto + Botão */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -22,7 +21,7 @@ export default function Hero() {
                         viewport={{ once: true }}
                         className="px-4 text-left sm:px-6 md:px-8 lg:px-10 xl:pr-12"
                     >
-                        <h2 className="font-jakarta text-3xl font-bold leading-tight text-[#0a0d4e] sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.5rem]">
+                        <h2 className="font-poppins text-3xl font-bold leading-tight text-[#0a0d4e] sm:text-4xl md:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem]">
                             Your real‑time sales copilot that makes every call a winning call.
                         </h2>
                         <p className="mt-5 text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl">
@@ -70,7 +69,7 @@ export default function Hero() {
                 {/* Estatística */}
                 <div className="pt-20 text-center">
                     <div className="inline-flex items-baseline gap-3">
-                        <p className="font-jakarta text-4xl font-bold text-gray-800 sm:text-5xl md:text-6xl">
+                        <p className="font-poppins text-3xl font-bold text-gray-800 sm:text-4xl md:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem]">
                             {countUpStart && (
                                 <CountUp
                                     end={50}

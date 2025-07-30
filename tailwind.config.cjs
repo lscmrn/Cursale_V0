@@ -24,9 +24,10 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                jakarta: ['Plus Jakarta Sans', 'sans-serif'],
-                rubik: ['Rubik', 'Helvetica', 'Arial', 'sans-serif'],
+                poppins: ['Poppins', 'sans-serif'],
                 inter: ['Inter', 'sans-serif'],
+                rubik: ['Rubik', 'sans-serif'],
+                sans: ['Poppins', 'Inter', 'Rubik', 'sans-serif'],
             },
             colors: {
                 'cursale-white': '#FFFFFF',

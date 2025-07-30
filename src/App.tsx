@@ -8,9 +8,10 @@ import SecondaryCTA from './components/sections/SecondaryCTA';
 import Testimonials from './components/sections/Testimonials';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
+
 export default function App() {
     return (
-        <div className="bg-gradient-cursale min-h-screen w-full text-cursale-blue-900">
+        <div className="text-cursale-blue-900 min-h-screen w-full bg-gradient-ia-light">
             <Header />
             <main className="overflow-x-hidden">
                 <section

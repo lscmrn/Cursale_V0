@@ -62,6 +62,19 @@ module.exports = {
         'gradient-ia-cyberpunk-neonBlue': 'linear-gradient(90deg, #00C2FF, #E385EC)',
         'gradient-ia-light':
           'linear-gradient(90deg, rgba(236, 241, 254, 0.7), rgba(243, 244, 246, 0.7), rgba(255, 255, 255, 0.5))',
+          'gradient-ia-frost': 'linear-gradient(135deg, #e0f7ff, #f3f4f6, #ffffff)',
+          'gradient-ia-peach-cyan': 'linear-gradient(135deg, #FCE3EC, #e8f3fc, #E0FCFF)',
+          'gradient-ia-violet-mint': 'linear-gradient(135deg, #E8EAF6, #E0F7FA, #E0F2F1)',
+          'gradient-ia-softblue-glow': 'linear-gradient(135deg, #F0F9FF, #E3F2FD, #FCE4EC)',
+          'gradient-ia-glow-light': 'linear-gradient(145deg, #f1f5ff, #e8ecff, #fdf4ff)',
+          'gradient-ia-pure-light': 'linear-gradient(135deg, #FFFFFF, #F9FAFB, #EFF6FF)',
+          'gradient-ia-landing-harmony': 'linear-gradient(180deg, #F5F8FF 0%, #FDF6FF 50%, #F0F9FF 100%)',
+          'gradient-ia-card': 'linear-gradient(135deg, #f4f1ff 0%, #edf3ff 50%, #fdf6ff 100%)',
+          'gradient-ia-btn-hero': 'linear-gradient(90deg, #6C00FF, #00C2FF)',        // roxo → azul (botão hero)
+'gradient-ia-btn-scroll': 'linear-gradient(90deg, #00C2FF, #FF007A)',     // azul → magenta (botão após scroll)
+'gradient-ia-outline-hover': 'linear-gradient(90deg, #6C00FF, #00C2FF)',  // hover em botões outline
+
+
       },
       fontSize: {
         xs: ['clamp(0.8rem, 0.7vw, 0.875rem)', '1.25rem'],
@@ -86,5 +99,22 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+     function ({ addUtilities }) {
+      addUtilities({
+        '.border-gradient-hero': {
+          borderImage: 'linear-gradient(90deg, #00C2FF, #6C00FF)',
+          borderImageSlice: 1,
+          borderWidth: '2px',
+          borderStyle: 'solid',
+        },
+        '.border-gradient-scroll': {
+          borderImage: 'linear-gradient(90deg, #6C00FF, #FF007A)',
+          borderImageSlice: 1,
+          borderWidth: '2px',
+          borderStyle: 'solid',
+        },
+      });
+    },
+  ],
 };

@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/enforces-negative-arbitrary-values */
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/images/hero.png';
 import CountUp from 'react-countup';
@@ -11,90 +10,79 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative w-full py-10 sm:py-14 md:py-20 lg:py-28"
+            className="w-full py-12 sm:py-16 md:py-20 lg:py-28"
         >
-            <div className="container text-center">
-                <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 4xl:gap-28">
-                    {/* TEXTO + BOTÃO */}
+            <div className="container">
+                <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
+                    {/* Texto + Botão */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, x: -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: 'easeOut' }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        className="w-full px-4 sm:px-6 md:basis-1/3 md:px-8 lg:basis-[35%] lg:px-10 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-36"
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                        className="px-4 text-left sm:px-6 md:px-8 lg:px-10 xl:pr-12"
                     >
-                        <h2 className="my-8 font-jakarta text-[1.75rem] font-bold leading-snug text-gray-900 sm:text-[1.875rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.5rem] 3xl:text-[4rem] 4xl:text-[5rem]">
-                            Your real-time sales copilot that makes every call a winning call.
+                        <h2 className="font-jakarta text-3xl font-bold leading-tight text-[#0a0d4e] sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.5rem]">
+                            Your real‑time sales copilot that makes every call a winning call.
                         </h2>
-                        <p className="mb-10 text-sm text-gray-600 sm:text-base md:text-lg lg:text-xl">
+                        <p className="mt-5 text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl">
                             Sell more with less effort. Cursale supports you on calls, suggests
                             questions, addresses objections, and generates follow-ups that actually
                             close deals.
                         </p>
-                        <div className="mt-6">
+                        <div className="mt-8">
                             <Button
                                 variant="primary"
                                 onClick={scrollToCta}
-                                className="text-xs sm:text-sm md:text-base lg:text-lg"
+                                className="px-6 py-3 text-base sm:text-lg md:text-xl"
                             >
                                 Get started for free
                             </Button>
                         </div>
                     </motion.div>
 
-                    {/* IMAGEM */}
+                    {/* Imagem + Texto abaixo */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
+                        initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: 'easeOut' }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        className="flex w-full justify-center md:basis-1/3 lg:basis-[65%]"
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                        className="flex justify-center lg:justify-end"
                     >
-                        <div className="relative flex w-full flex-col items-center justify-center">
+                        <div className="relative w-full rounded-2xl object-contain px-4 shadow-[0_0_30px_#6C00FF66] transition-transform hover:scale-105 hover:shadow-[0_0_40px_#00C2FF99] sm:px-6 md:max-w-[1600px] lg:max-w-[1800px] xl:max-w-[2000px]">
                             <img
                                 src={heroImage}
-                                alt="hero"
-                                className="
-                                    w-full
-                                    max-w-none
-                                    rounded-2xl
-                                    object-contain
-                                    transition-transform
-                                    hover:scale-105
-                                    sm:w-[540px]
-                                    md:w-[680px]
-                                    lg:w-[780px]
-                                    xl:w-[850px]
-                                    2xl:w-[1015px]
-                                    3xl:w-[1200px]
-                                    4xl:w-[1440px]"
+                                alt="Cursale hero"
+                                className="mt-2 w-full"
                             />
-                            <div className="absolute -bottom-14 w-full pl-32 pr-16 text-center text-[0.7rem] sm:text-xs md:text-sm lg:text-base">
-                                <p className="leading-relaxed text-gray-700">
-                                    The{' '}
-                                    <span className="text-cursale-blue-900 font-semibold">
-                                        Cursale
-                                    </span>{' '}
-                                    accompanies you on calls, suggests questions, addresses
-                                    objections, and generates follow-ups that actually close deals.
-                                </p>
-                            </div>
+                            <p className="mt-3 text-center text-sm text-gray-700 sm:text-base md:text-lg lg:text-xl">
+                                The{' '}
+                                <span className="text-ia.cyberpunk.darkBlue font-semibold">
+                                    Cursale
+                                </span>{' '}
+                                accompanies you on calls, suggests questions, addresses objections,
+                                and generates follow‑ups that actually close deals.
+                            </p>
                         </div>
                     </motion.div>
                 </div>
-                <div className="mt-12 flex flex-row items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    <p className="font-bold text-gray-800">
-                        {countUpStart && (
-                            <CountUp
-                                end={50}
-                                duration={2}
-                            />
-                        )}
-                        %
-                    </p>
-                    <p className="ml-2 text-center text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl">
-                        More sales conversions
-                    </p>
+
+                {/* Estatística */}
+                <div className="pt-20 text-center">
+                    <div className="inline-flex items-baseline gap-3">
+                        <p className="font-jakarta text-4xl font-bold text-gray-800 sm:text-5xl md:text-6xl">
+                            {countUpStart && (
+                                <CountUp
+                                    end={50}
+                                    duration={2}
+                                />
+                            )}
+                            %
+                        </p>
+                        <p className="text-xl text-gray-600 sm:text-2xl md:text-3xl">
+                            More sales conversions
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

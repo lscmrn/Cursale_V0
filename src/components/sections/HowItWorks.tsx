@@ -1,75 +1,57 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaChartLine } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import { useHowItWorks } from '@/hooks/useHowItWorks';
+import SalesAi from '@/assets/images/sales-ai.png';
+import HowItWorksImage from '@/assets/images/how-works.png';
 export default function HowItWorks() {
     const { steps } = useHowItWorks();
+
     return (
         <section
             id="how-it-works"
-            className="relative w-full py-10 sm:py-14 md:py-20 lg:py-28"
+            className="flex w-full flex-col lg:flex-row"
         >
-            <div className="container text-center">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="mb-3 text-[1.8rem] font-bold text-cursale-blue-900 sm:text-3xl md:text-4xl lg:text-5xl"
-                >
-                    Sell smarter.{' '}
-                    <span className="text-cursale-orange-500">Less improvisation.</span>
-                </motion.h2>
-                <p className="mb-8 text-[0.9rem] text-cursale-blue-700 sm:mb-10 sm:text-base md:mb-12 md:text-lg lg:text-xl">
-                    Getting started is simple. Fast results, no friction.
-                </p>
-                <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-10 sm:grid-cols-2 sm:gap-6 md:mb-12 md:gap-8 lg:grid-cols-3">
-                    <AnimatePresence>
-                        {steps.map((step, index) => {
-                            const Icon = step.icon;
-                            return (
-                                <motion.div
-                                    key={step.title}
-                                    initial={{ opacity: 0, y: 40 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -40 }}
-                                    viewport={{ once: true, amount: 0.3 }}
-                                    transition={{ duration: 0.5, delay: index * 0.15 }}
-                                    whileHover={{ scale: 1.07 }}
-                                    className="mx-auto flex w-full max-w-[260px] flex-col items-center rounded-2xl bg-gradient-orange-100 p-4 text-center text-cursale-blue-50 shadow-lg shadow-cursale-blue-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cursale-blue-300/50 sm:max-w-[300px] sm:p-5 md:max-w-[340px] md:p-6 lg:max-w-[380px]"
-                                >
-                                    <motion.div
-                                        whileHover={{ scale: 1.2, rotate: 5 }}
-                                        transition={{ type: 'spring', stiffness: 300 }}
-                                        className="mb-3 text-3xl text-cursale-blue-600 sm:text-4xl lg:text-5xl"
-                                    >
-                                        <Icon />
-                                    </motion.div>
-                                    <h3 className="text-base font-semibold text-cursale-gray-800 sm:text-lg md:text-xl">
-                                        {step.title}
-                                    </h3>
-                                </motion.div>
-                            );
-                        })}
-                    </AnimatePresence>
+            {/* Esquerda: texto e balões */}
+            <div className="flex w-full items-center justify-center lg:w-1/2">
+                <div className="max-w-md">
+                    <h2 className="mb-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+                        The Sales AI that thinks in frameworks <br />
+                        <span className="text-ia.cyberpunk.magenta">and feels in real time.</span>
+                    </h2>
+                    {/* Balões/Imagem ou texto adicional pode entrar aqui */}
+                    <img
+                        src={SalesAi}
+                        alt="Left content"
+                        className="mt-6 rounded-lg"
+                    />
                 </div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="mx-auto max-w-lg rounded-xl bg-gradient-blue-700 p-4 sm:max-w-xl sm:p-5 md:max-w-2xl md:p-6"
-                >
-                    <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-                        <FaChartLine className="text-3xl text-cursale-blue-100 sm:text-4xl md:text-5xl" />
-                        <p className="text-sm leading-relaxed text-cursale-gray-50 sm:text-base md:text-lg lg:text-xl">
-                            Up to{' '}
-                            <span className="font-bold text-cursale-orange-100">
-                                +50% conversion
-                            </span>
-                            . Training in minutes. Immediate ROI.
-                        </p>
+            </div>
+
+            {/* Direita: gradiente + passos */}
+            <div className="flex w-full flex-col items-center justify-center bg-gradient-ia-how-it-works px-6 py-14 text-white lg:w-11/12">
+                <h3 className="mb-10 text-center text-2xl font-bold text-white sm:text-3xl">
+                    Comece agora!
+                </h3>
+                <div className="flex flex-row">
+                    <div className="flex max-w-md flex-col items-center gap-8">
+                        {steps.map((step, index) => (
+                            <div
+                                key={index}
+                                className="text-center"
+                            >
+                                <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[1.4rem] font-bold text-[#6C00FF]">
+                                    {index + 1}
+                                </div>
+                                <p className="text-base leading-relaxed sm:text-lg">{step.title}</p>
+                            </div>
+                        ))}
                     </div>
-                </motion.div>
+
+                    <img
+                        src={HowItWorksImage}
+                        alt="How it works UI"
+                        className="w-full max-w-sm rounded-xl object-contain shadow-lg sm:max-w-md md:max-w-lg"
+                    />
+                </div>
             </div>
         </section>
     );

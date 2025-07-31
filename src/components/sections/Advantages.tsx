@@ -13,9 +13,9 @@ export default function Advantages() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
-                    className="mb-6 text-2xl font-bold text-cursale-blue-900 sm:mb-8 sm:text-3xl md:mb-10 md:text-4xl lg:text-5xl"
+                    className="mb-6 text-2xl font-bold text-ia-futurist-purple sm:mb-8 sm:text-3xl md:mb-10 md:text-4xl lg:text-5xl"
                 >
-                    Real <span className="text-cursale-orange-500">advantages</span> for your team
+                    Real <span className="text-ia-classic-deep">advantages</span> for your team
                 </motion.h2>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:gap-8 lg:grid-cols-3">
                     {items.map((item, index) => {
@@ -33,12 +33,12 @@ export default function Advantages() {
                                     stiffness: 120,
                                 }}
                                 whileHover={{ scale: 1.05 }}
-                                className="flex flex-col items-center rounded-2xl bg-gradient-blue-50 p-4 text-center text-cursale-orange-600 shadow-lg shadow-cursale-blue-800/30 sm:p-5 md:p-6 lg:p-8"
+                                className="text-cursale-orange-600 shadow-cursale-blue-800/30 flex flex-col items-center rounded-2xl bg-gradient-ia-softblue-glow p-4 text-center shadow-lg sm:p-5 md:p-6 lg:p-8"
                             >
                                 <motion.div
                                     whileHover={{ rotate: 5, scale: 1.2 }}
                                     transition={{ type: 'spring', stiffness: 200 }}
-                                    className="mb-3 text-3xl text-cursale-blue-700 sm:mb-4 sm:text-4xl md:text-5xl"
+                                    className="mb-3 text-3xl text-ia-cyberpunk-neonPurple sm:mb-4 sm:text-4xl md:text-5xl"
                                 >
                                     <Icon />
                                 </motion.div>

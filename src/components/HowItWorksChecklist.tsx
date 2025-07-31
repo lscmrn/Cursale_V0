@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Icon1 from '@/assets/images/icons/cursale-icon.png';
+import Icon1 from '@/assets/images/icons/cursale-icon.svg';
 import Icon2 from '@/assets/images/icons/cursale-scared.svg';
 import Icon3 from '@/assets/images/icons/cursale-sound.svg';
 import Icon4 from '@/assets/images/icons/cursale-task.svg';

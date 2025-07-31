@@ -30,20 +30,20 @@ export default function CursaleInAction() {
                     viewport={{ once: true, amount: 0.3 }}
                     className="w-full text-left md:w-1/2"
                 >
-                    <p className="mb-2 text-[0.8rem] uppercase tracking-wide text-cursale-orange-500 sm:text-sm md:mb-3 md:text-base lg:text-lg">
+                    <p className="mb-2 text-[0.8rem] uppercase tracking-wide text-ia-cyberpunk-neonPurple sm:text-sm md:mb-3 md:text-base lg:text-lg">
                         Cursale in action
                     </p>
-                    <h2 className="mb-4 text-xl font-bold leading-snug text-cursale-blue-900 sm:mb-6 sm:text-2xl md:mb-8 md:text-3xl lg:mb-10 lg:text-4xl xl:text-5xl">
+                    <h2 className="mb-4 text-xl font-bold leading-snug text-ia-cyberpunk-darkBlue sm:mb-6 sm:text-2xl md:mb-8 md:text-3xl lg:mb-10 lg:text-4xl xl:text-5xl">
                         You speak. Cursale listens, understands, and gives you the next best step to
                         close.
                     </h2>
-                    <p className="mb-6 text-[0.9rem] leading-relaxed text-cursale-blue-900 sm:mb-8 sm:text-base md:mb-10 md:text-lg lg:mb-12 lg:text-xl">
+                    <p className="mb-6 text-[0.9rem] leading-relaxed text-ia-cyberpunk-darkBlue sm:mb-8 sm:text-base md:mb-10 md:text-lg lg:mb-12 lg:text-xl">
                         While other AIs make generic analyses or only work after the call is
                         recorded,{' '}
-                        <span className="font-bold text-cursale-blue-900">
+                        <span className="font-bold text-ia-cyberpunk-neonMagenta">
                             Cursale steps in when you need it most:
                         </span>{' '}
-                        <span className="font-semibold text-cursale-orange-500">
+                        <span className="text-ia-cyberpunk font-semibold">
                             during the real conversation with your client.
                         </span>
                     </p>
@@ -52,7 +52,7 @@ export default function CursaleInAction() {
                         whileTap={{ scale: 0.95 }}
                     >
                         <Button
-                            variant="gradient"
+                            variant="tertiary"
                             onClick={scrollToCta}
                             className="text-xs sm:text-sm md:text-base lg:text-lg"
                         >

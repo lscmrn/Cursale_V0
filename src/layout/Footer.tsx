@@ -11,14 +11,14 @@ export default function Footer() {
     const changeLanguage = (lang: string) => i18n.changeLanguage(lang);
 
     return (
-        <footer className="bg-gradient-to-r from-cursale-blue-50 via-cursale-gray-50 to-cursale-gray-100 py-6 sm:py-8 md:py-10 lg:py-12">
+        <footer className="bg-gradient-ia-frost py-6 sm:py-8 md:py-10 lg:py-12">
             <div className="container space-y-4 sm:space-y-6">
-                <nav className="flex flex-wrap justify-center gap-3 text-[0.7rem] font-medium text-cursale-blue-800 sm:gap-4 sm:text-xs md:text-sm lg:text-base">
+                <nav className="flex flex-wrap justify-center gap-3 text-[0.7rem] font-medium text-ia-futurist-purple sm:gap-4 sm:text-xs md:text-sm lg:text-base">
                     {links.map((link) => (
                         <button
                             key={link.key}
                             onClick={() => scrollToSection(link.id)}
-                            className="transition hover:text-cursale-orange-400"
+                            className="transition hover:text-ia-classic-deep"
                         >
                             <Translate k={`footer.links.${link.key}`} />
                         </button>
@@ -26,11 +26,11 @@ export default function Footer() {
                 </nav>
 
                 <p
-                    className="mx-auto max-w-3xl text-center text-[0.6rem] leading-relaxed text-cursale-blue-400 sm:text-[0.7rem] md:text-xs lg:text-sm"
+                    className="mx-auto max-w-3xl text-center text-[0.6rem] leading-relaxed text-ia-classic-deep sm:text-[0.7rem] md:text-xs lg:text-sm"
                     dangerouslySetInnerHTML={{ __html: t('footer.description') }}
                 />
 
-                <div className="flex flex-col items-center justify-between space-y-3 border-t border-cursale-gray-200 pt-3 sm:space-y-4 sm:pt-4 md:flex-row md:space-y-0">
+                <div className="flex flex-col items-center justify-between space-y-3 border-t border-ia-futurist-cyan pt-3 sm:space-y-4 sm:pt-4 md:flex-row md:space-y-0">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -43,10 +43,10 @@ export default function Footer() {
                             alt="Cursale Logo"
                             className="h-4 w-auto sm:h-5 md:h-6 lg:h-8"
                         />
-                        <h3 className="text-[0.65rem] font-bold text-cursale-blue-800 sm:text-xs md:text-sm lg:text-base">
+                        <h3 className="text-[0.65rem] font-bold text-ia-futurist-purple sm:text-xs md:text-sm lg:text-base">
                             <Translate k="footer.tagline" />
                         </h3>
-                        <p className="text-[0.55rem] text-cursale-orange-400 sm:text-[0.65rem] md:text-xs lg:text-sm">
+                        <p className="text-[0.55rem] text-ia-cyberpunk-darkBlue sm:text-[0.65rem] md:text-xs lg:text-sm">
                             © {year} • <Translate k="footer.rights" />
                         </p>
                     </motion.div>

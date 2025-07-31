@@ -1,5 +1,6 @@
 import { JSX } from 'react';
-import LogoHeader from '@/assets/images/icons/cursale-header.png';
+import LogoHeaderDark from '@/assets/images/icons/logo-header-dark.png';
+import LogoHeaderGradient from '@/assets/images/icons/logo-header-gradient.png';
 import { useHeader } from '@/hooks/useHeader';
 import { Button } from '@/ui/Button';
 import { Dropdown } from '@/ui/Dropdown';
@@ -32,7 +33,7 @@ export default function Header(): JSX.Element {
                         className="flex cursor-pointer items-center space-x-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-ia-cyberpunk-neonMagenta"
                     >
                         <img
-                            src={LogoHeader}
+                            src={scrolled ? LogoHeaderGradient : LogoHeaderDark}
                             alt="Cursale Logo"
                             className="h-6 w-auto transition-all duration-500 sm:h-8 md:h-10 lg:h-12 xl:h-14 2xl:h-16"
                         />

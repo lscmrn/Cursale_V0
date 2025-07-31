@@ -80,6 +80,7 @@ module.exports = {
                 'gradient-ia-btn-scroll': 'linear-gradient(90deg, #00C2FF, #FF007A)',
                 'gradient-ia-outline-hover': 'linear-gradient(90deg, #6C00FF, #00C2FF)',
                 'gradient-ia-how-it-works': 'linear-gradient(90deg, #004aad, #e385ec)',
+                'gradient-check': 'linear-gradient(180deg, #7e038936, #03c2b01f)',
             },
             fontSize: {
                 xs: ['clamp(0.8rem, 0.7vw, 0.875rem)', '1.25rem'],

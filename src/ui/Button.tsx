@@ -18,7 +18,7 @@ export function Button({
     const variants = {
         primary: 'bg-gradient-ia-mirror text-white hover:brightness-110',
         secondary: 'bg-gradient-ia-futurist text-white hover:brightness-110',
-        tertiary: 'bg-gradient-ia-cyberpunk-neonBlue text-white hover:bg-ia-cyberpunk-neonBlue',
+        tertiary: 'bg-gradient-ia-how-it-works text-white hover:bg-ia-cyberpunk-neonBlue',
         outline:
             'bg-gradient-ia-classic text-white hover:bg-ia-cyberpunk-neonBlue hover:text-white',
     };

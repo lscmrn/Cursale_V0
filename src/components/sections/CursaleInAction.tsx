@@ -51,11 +51,11 @@ export default function CursaleInAction() {
                         </h2>
 
                         <p className="mb-6 text-[0.9rem] leading-relaxed text-brand-body900 sm:mb-8 sm:text-base md:mb-10 md:text-lg lg:mb-12 lg:text-xl">
-                            {t('cursaleInAction.copy.before')}{' '}
+                            {t('cursaleInAction.copy.a')}{' '}
                             <span className="font-bold text-ia-cyberpunk-neonMagenta">
-                                {t('cursaleInAction.copy.highlight')}
+                                {t('cursaleInAction.copy.b')}
                             </span>{' '}
-                            <span className="font-semibold">{t('cursaleInAction.copy.after')}</span>
+                            <span className="font-semibold">{t('cursaleInAction.copy.c')}</span>
                         </p>
 
                         <motion.div

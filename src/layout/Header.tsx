@@ -3,7 +3,7 @@ import LogoHeaderDark from '@/assets/images/icons/logo-header-dark.png';
 import LogoHeaderGradient from '@/assets/images/icons/logo-header-gradient.png';
 import { useHeader } from '@/hooks/useHeader';
 import { Button } from '@/ui/Button';
-import { Translate } from '@/components/Translate';
+import { t } from 'i18next';
 
 export default function Header(): JSX.Element {
     const {
@@ -48,7 +48,7 @@ export default function Header(): JSX.Element {
                             onClick={() => scrollToSection(item.id)}
                             className={`rounded-md text-sm font-semibold ${hoverColor} hover:underline md:text-base lg:text-lg`}
                         >
-                            <Translate k={`header.nav.${item.key}`} />
+                            {t(`header.nav.${item.key}`)}
                         </button>
                     ))}
                 </nav>
@@ -59,7 +59,7 @@ export default function Header(): JSX.Element {
                         onClick={() => scrollToSection('signup')}
                         className="px-4 py-2 text-sm md:text-sm lg:text-base"
                     >
-                        <Translate k="header.buttons.getStarted" />
+                        {t('header.buttons.getStarted')}
                     </Button>
                 </div>
 
@@ -115,7 +115,7 @@ export default function Header(): JSX.Element {
                             }}
                             className={`rounded-md text-base font-semibold ${hoverColor} hover:underline sm:text-lg`}
                         >
-                            <Translate k={`header.nav.${item.key}`} />
+                            {t(`header.nav.${item.key}`)}
                         </button>
                     ))}
                     <div className="flex w-full max-w-xs flex-col">
@@ -128,7 +128,7 @@ export default function Header(): JSX.Element {
                             className="px-8 py-3 text-base"
                             fullWidth
                         >
-                            <Translate k="header.buttons.getStarted" />
+                            {t('header.buttons.getStarted')}
                         </Button>
                     </div>
                 </div>

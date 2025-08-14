@@ -21,7 +21,8 @@
         "cta": "Comece agora",
         "stat": {
             "label": "Mais conversões de vendas"
-        }
+        },
+        "imageCaption": "O Cursale acompanha você em ligações, sugere perguntas, aborda objeções e gera acompanhamentos que realmente fecham negócios."
     },
     "features": {
         "heading": "Principais Recursos",
@@ -36,7 +37,7 @@
                     "title": "IA em Tempo Real nas Videochamadas",
                     "desc": "Sugestões ao vivo alinhadas a SPIN, BANT e Challenger. Suporte a 89+ idiomas."
                 },
-                "immediate": {
+                "immediateResults": {
                     "title": "Resultados Imediatos",
                     "desc": "Dê um contexto rápido—quem é o cliente e o que você vende—e receba orientação instantânea."
                 },
@@ -44,7 +45,7 @@
                     "title": "Integração Nativa com o CRM",
                     "desc": "Traga histórico e contexto do cliente sem copiar e colar."
                 },
-                "followups": {
+                "followUps": {
                     "title": "Follow-ups Automáticos",
                     "desc": "E-mails, resumos e próximos passos gerados por IA logo após a call."
                 },
@@ -116,35 +117,44 @@
         }
     },
     "cursaleInAction": {
-        "eyebrow": "Cursale em ação",
+        "badge": "Cursale em ação",
         "title": "Você fala. A Cursale ouve, entende e indica o próximo melhor passo para fechar.",
         "copy": {
             "a": "Enquanto outras IAs fazem análises genéricas ou só funcionam depois da gravação,",
             "b": "a Cursale entra quando você mais precisa:",
             "c": "durante a conversa real com o cliente."
         },
-        "cta": "Comece grátis agora"
+        "cta": "Comece agora"
     },
     "howItWorks": {
-        "heading": "A IA de Vendas que pensa em frameworks e sente em tempo real.",
-        "subcopy": "Transforme seu processo de vendas com uma IA que se adapta ao seu CRM e entrega insights em tempo real para máxima conversão.",
-        "cta": "Comece agora!",
-        "steps": {
-            "s1": {
-                "title": "Instale a extensão do Chrome e crie sua conta",
-                "desc": "Configuração rápida em minutos com nossa extensão."
-            },
-            "s2": {
-                "title": "Prepare-se para vender! (Opcional)",
-                "desc": "Dê um briefing simples: quem é o cliente e o que você vende."
-            },
-            "s3": {
-                "title": "Potencialize conectando seu CRM (Opcional)",
-                "desc": "Integração fluida com seus fluxos."
-            },
-            "s4": {
-                "title": "Venda com suporte de IA em tempo real",
-                "desc": "Receba insights e frameworks enquanto fala com prospects."
+        "title": {
+            "pre": "A IA de Vendas que",
+            "thinksIn": "pensa em",
+            "frameworks": "frameworks",
+            "and": "e",
+            "feelsInReal": "sente em tempo",
+            "time": "real."
+        },
+        "subcopy": "Transforme seu processo de vendas com uma IA inteligente que se adapta ao seu CRM e oferece insights em tempo real para máxima conversão.",
+        "ctaTitle": "Comece agora!",
+        "howItWorksChecklist": {
+            "steps": {
+                "install": {
+                    "title": "Instale a extensão do Chrome e crie sua conta",
+                    "desc": "Configuração rápida em minutos com nossa extensão do Chrome."
+                },
+                "briefing": {
+                    "title": "Prepare-se para vender! (Opcional)",
+                    "desc": "Dê um briefing simples: quem é o cliente e o que você vende."
+                },
+                "crm": {
+                    "title": "Potencialize a Cursale conectando seu CRM (Opcional)",
+                    "desc": "Integração perfeita com seus fluxos atuais."
+                },
+                "sell": {
+                    "title": "Venda com suporte de IA em tempo real",
+                    "desc": "Receba insights e frameworks inteligentes enquanto fala com prospects."
+                }
             }
         }
     },
@@ -152,12 +162,12 @@
         "heading": { "pre": "Vantagens", "highlight": "reais", "post": "para o seu time" },
         "subcopy": "Ganhos tangíveis de produtividade, consistência e taxa de ganho — desde o primeiro dia.",
         "items": {
-            "a1": "+50% em conversão média",
-            "a2": "+85% de retenção após o primeiro mês",
-            "a3": "NPS > 60",
-            "a4": "Dashboards em tempo real para líderes",
-            "a5": "Argumentos baseados em frameworks validados",
-            "a6": "IA que aprende com a rotina de cada vendedor"
+            "conversion": "+50% em conversão média",
+            "retention": "+85% de retenção após o primeiro mês",
+            "nps": "NPS > 60",
+            "dashboards": "Dashboards em tempo real para líderes",
+            "frameworks": "Argumentos baseados em frameworks validados",
+            "learning": "IA que aprende com a rotina de cada vendedor"
         }
     },
     "testimonials": {
@@ -211,6 +221,6 @@
             "before": "Receba ajuda de IA baseada nos seus dados — ou simplesmente diga quem é o cliente e o que você vende.",
             "highlight": "A Cursale se adapta e age em segundos."
         },
-        "cta": "Comece grátis agora"
+        "cta": "Comece agora"
     }
 }

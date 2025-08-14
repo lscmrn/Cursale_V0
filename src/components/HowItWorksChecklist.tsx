@@ -13,26 +13,26 @@ const STEP_DEFS: StepDef[] = [
     {
         id: 1,
         Icon: FiChrome,
-        titleKey: 'howItWorksChecklist.steps.install.title',
-        descKey: 'howItWorksChecklist.steps.install.desc',
+        titleKey: 'howItWorks.howItWorksChecklist.steps.install.title',
+        descKey: 'howItWorks.howItWorksChecklist.steps.install.desc',
     },
     {
         id: 2,
         Icon: FiEdit3,
-        titleKey: 'howItWorksChecklist.steps.briefing.title',
-        descKey: 'howItWorksChecklist.steps.briefing.desc',
+        titleKey: 'howItWorks.howItWorksChecklist.steps.briefing.title',
+        descKey: 'howItWorks.howItWorksChecklist.steps.briefing.desc',
     },
     {
         id: 3,
         Icon: FiLink,
-        titleKey: 'howItWorksChecklist.steps.crm.title',
-        descKey: 'howItWorksChecklist.steps.crm.desc',
+        titleKey: 'howItWorks.howItWorksChecklist.steps.crm.title',
+        descKey: 'howItWorks.howItWorksChecklist.steps.crm.desc',
     },
     {
         id: 4,
         Icon: FiZap,
-        titleKey: 'howItWorksChecklist.steps.sell.title',
-        descKey: 'howItWorksChecklist.steps.sell.desc',
+        titleKey: 'howItWorks.howItWorksChecklist.steps.sell.title',
+        descKey: 'howItWorks.howItWorksChecklist.steps.sell.desc',
     },
 ];
 

@@ -21,7 +21,8 @@
         "cta": "Get started now",
         "stat": {
             "label": "More sales conversions"
-        }
+        },
+        "imageCaption": "The Cursale accompanies you on calls, suggests questions, addresses objections, and generates follow‑ups that actually close deals."
     },
     "features": {
         "heading": "Main Features",
@@ -36,7 +37,7 @@
                     "title": "Real-Time AI in Video Calls",
                     "desc": "Live suggestions during calls aligned with SPIN, BANT, and Challenger. Supports 89+ languages."
                 },
-                "immediate": {
+                "immediateResults": {
                     "title": "Immediate Results",
                     "desc": "Give quick context—who the customer is and what you sell—and get instant guidance."
                 },
@@ -44,7 +45,7 @@
                     "title": "Native CRM Integration",
                     "desc": "Bring customer history and context into your workflow with zero copy-paste."
                 },
-                "followups": {
+                "followUps": {
                     "title": "Automatic Follow-Ups",
                     "desc": "AI-generated emails, summaries, and next steps immediately after the call."
                 },
@@ -116,7 +117,7 @@
         }
     },
     "cursaleInAction": {
-        "eyebrow": "Cursale in action",
+        "badge": "Cursale in action",
         "title": "You speak. Cursale listens, understands, and gives you the next best step to close.",
         "copy": {
             "a": "While other AIs make generic analyses or only work after the call is recorded,",
@@ -126,25 +127,34 @@
         "cta": "Get started for free"
     },
     "howItWorks": {
-        "heading": "The Sales AI that thinks in frameworks and feels in real time.",
+        "title": {
+            "pre": "The Sales AI that",
+            "thinksIn": "thinks in",
+            "frameworks": "frameworks",
+            "and": "and",
+            "feelsInReal": "feels in real",
+            "time": "time."
+        },
         "subcopy": "Transform your sales process with intelligent AI that adapts to your CRM and provides real-time insights for maximum conversion.",
-        "cta": "Get started now!",
-        "steps": {
-            "s1": {
-                "title": "Install the Chrome extension and create your account",
-                "desc": "Quick setup in minutes with our powerful Chrome extension."
-            },
-            "s2": {
-                "title": "Get ready to sell! (Optional)",
-                "desc": "Give a simple briefing: who is the customer and what you sell."
-            },
-            "s3": {
-                "title": "Supercharge Cursale by connecting your CRM (Optional)",
-                "desc": "Seamless integration with your workflows."
-            },
-            "s4": {
-                "title": "Sell with real-time AI support",
-                "desc": "Get intelligent insights and frameworks while talking to prospects."
+        "ctaTitle": "Get started now!",
+        "howItWorksChecklist": {
+            "steps": {
+                "install": {
+                    "title": "Install the Chrome extension and create your account",
+                    "desc": "Quick setup in minutes with our powerful Chrome extension."
+                },
+                "briefing": {
+                    "title": "Get ready to sell! (Optional)",
+                    "desc": "Give a simple briefing: who is the customer and what you sell."
+                },
+                "crm": {
+                    "title": "Supercharge Cursale by connecting your CRM (Optional)",
+                    "desc": "Seamless integration with your existing workflows."
+                },
+                "sell": {
+                    "title": "Sell with real-time AI support",
+                    "desc": "Get intelligent insights and frameworks as you talk to prospects."
+                }
             }
         }
     },
@@ -152,12 +162,12 @@
         "heading": { "pre": "Real", "highlight": "advantages", "post": "for your team" },
         "subcopy": "Tangible gains in productivity, consistency and win-rates — from day one.",
         "items": {
-            "a1": "+50% average conversion increase",
-            "a2": "+85% retention after the first month",
-            "a3": "NPS > 60",
-            "a4": "Real-time dashboards for leaders",
-            "a5": "Arguments based on validated frameworks",
-            "a6": "AI that learns from each seller's routine"
+            "conversion": "+50% average conversion increase",
+            "retention": "+85% retention after the first month",
+            "nps": "NPS > 60",
+            "dashboards": "Real-time dashboards for leaders",
+            "frameworks": "Arguments based on validated frameworks",
+            "learning": "AI that learns from each seller's routine"
         }
     },
     "testimonials": {
@@ -211,6 +221,6 @@
             "before": "Get AI-powered help based on your data — or simply tell us who the client is and what you’re selling.",
             "highlight": "Cursale adapts and acts in seconds."
         },
-        "cta": "Start free now"
+        "cta": "Get started now"
     }
 }

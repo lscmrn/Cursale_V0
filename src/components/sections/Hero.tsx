@@ -27,7 +27,7 @@ export default function Hero() {
                             {t('hero.title')}
                         </h2>
                         <p className="mt-5 text-base text-brand-body900/90 sm:text-lg md:text-xl">
-                            {t('hero.subcopy')}
+                            {t('hero.subtitle')}
                         </p>
                         <div className="mt-8">
                             <Button

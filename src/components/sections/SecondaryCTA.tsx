@@ -58,9 +58,9 @@ export default function SecondaryCTA() {
                     className="flex items-center justify-center"
                 >
                     <Button
-                        variant="primary"
+                        variant="secondary"
                         onClick={() => scrollToSection('signup')}
-                        className="px-8 py-4 text-base sm:px-12 sm:py-5 sm:text-xl md:px-16 md:py-6 md:text-2xl lg:px-20 lg:py-7 lg:text-3xl"
+                        className="px-6 py-3 text-sm sm:text-sm md:text-base lg:text-lg"
                     >
                         {t('secondaryCta.cta')}
                     </Button>

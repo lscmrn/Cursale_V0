@@ -3,7 +3,6 @@ import LogoFooter from '@/assets/images/icons/cursale-icon.png';
 import ReactCountryFlag from 'react-country-flag';
 import { useFooter } from '@/hooks/useFooter';
 import { useHeader } from '@/hooks/useHeader';
-import { Translate } from '@/components/Translate';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
@@ -22,7 +21,7 @@ export default function Footer() {
                             onClick={() => scrollToSection(item.id)}
                             className="rounded-md px-1 transition hover:text-ia-cyberpunk-neonBlue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/30"
                         >
-                            <Translate k={`header.nav.${item.key}`} />
+                            {t(`header.nav.${item.key}`)}
                         </button>
                     ))}
                 </nav>
@@ -46,10 +45,10 @@ export default function Footer() {
                             className="h-6 w-auto sm:h-7 md:h-8"
                         />
                         <h3 className="text-sm font-bold text-brand-purple md:text-base">
-                            <Translate k="footer.tagline" />
+                            {t('footer.tagline')}
                         </h3>
                         <p className="text-xs text-brand-body900/80 md:text-sm">
-                            © {year} • <Translate k="footer.rights" />
+                            © {year} • {t('footer.rights')}
                         </p>
                     </motion.div>
 

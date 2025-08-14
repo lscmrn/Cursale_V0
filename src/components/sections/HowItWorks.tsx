@@ -16,7 +16,7 @@ const HowItWorks: FC = () => {
                     id="howitworks-heading"
                     className="text-center text-3xl font-extrabold leading-tight text-brand-body900 sm:text-4xl md:text-5xl"
                 >
-                    {t('howItWorks.heading')}{' '}
+                    {t('howItWorks.pre')}{' '}
                     <span className="bg-gradient-to-r from-brand-purple800 to-brand-blue bg-clip-text text-transparent">
                         {t('howItWorks.title.thinksIn')}
                     </span>{' '}

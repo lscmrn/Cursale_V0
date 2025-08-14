@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
+    variant?: 'primary' | 'secondary';
     fullWidth?: boolean;
 };
 
@@ -12,20 +12,15 @@ export function Button({
     className,
     ...props
 }: ButtonProps) {
-    const baseClasses =
-        'rounded-full font-bold transition duration-300 px-6 py-2 text-sm md:text-base lg:text-lg 2xl:text-xl shadow-md hover:shadow-lg';
-
+    const base =
+        'rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-purple/30 px-5 py-2 text-sm md:text-sm lg:text-base';
     const variants = {
-        primary: 'bg-gradient-ia-mirror text-white hover:brightness-110',
+        primary: 'bg-gradient-ia-btn-hero text-white hover:brightness-110',
         secondary: 'bg-gradient-ia-futurist text-white hover:brightness-110',
-        tertiary: 'bg-gradient-ia-how-it-works text-white hover:bg-ia-cyberpunk-neonBlue',
-        outline:
-            'bg-gradient-ia-classic text-white hover:bg-ia-cyberpunk-neonBlue hover:text-white',
     };
-
     return (
         <button
-            className={clsx(baseClasses, variants[variant], fullWidth && 'w-full', className)}
+            className={clsx(base, variants[variant], fullWidth && 'w-full', className)}
             {...props}
         />
     );

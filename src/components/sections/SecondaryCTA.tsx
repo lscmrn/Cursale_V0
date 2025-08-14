@@ -1,68 +1,69 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/ui/Button';
 import { useSecondaryCTA } from '@/hooks/useSecondaryCTA';
+import { useTranslation } from 'react-i18next';
+
 export default function SecondaryCTA() {
     const { scrollToSection } = useSecondaryCTA();
+    const { t } = useTranslation();
+
     return (
         <section
             id="secondary-cta"
-            className="relative w-full py-10 sm:py-14 md:py-20 lg:py-28"
+            aria-labelledby="secondary-cta-heading"
+            className="relative w-full bg-white py-10 font-poppins sm:py-14 md:py-20 lg:py-28"
         >
-            <div className="container text-center">
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cursale-blue-50 via-transparent to-transparent"
+            />
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ia-futurist-magenta/10 via-transparent to-transparent"
+            />
+
+            <div className="container mx-auto max-w-5xl px-4 text-center">
                 <motion.h2
+                    id="secondary-cta-heading"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
-                    className="mb-4 text-2xl font-bold text-cursale-orange-500 sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl lg:text-5xl"
+                    className="mb-4 text-3xl font-extrabold leading-tight text-brand-body900 sm:mb-6 sm:text-4xl md:mb-8 md:text-5xl"
                 >
-                    With or without CRM,{' '}
-                    <span className="text-cursale-blue-900">you sell more with Cursale</span>
+                    {t('secondaryCta.heading.pre')}{' '}
+                    <span className="bg-gradient-to-r from-ia-futurist-purple via-ia-cyberpunk-neonPurple to-ia-futurist-magenta bg-clip-text text-transparent">
+                        {t('secondaryCta.heading.highlight')}
+                    </span>
                 </motion.h2>
+
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="mx-auto mb-6 max-w-xl text-[0.9rem] leading-relaxed text-cursale-orange-900 sm:mb-8 sm:max-w-2xl sm:text-base md:mb-10 md:max-w-3xl md:text-lg lg:text-xl"
+                    transition={{ duration: 0.6, delay: 0.15 }}
+                    className="mx-auto mb-6 max-w-3xl text-[0.9rem] leading-relaxed text-brand-body900/85 sm:mb-8 sm:text-base md:mb-10 md:text-lg lg:text-xl"
                 >
-                    Get AI-powered help based on your data — or simply tell us who the client is and
-                    what you’re selling.{' '}
-                    <span className="font-semibold text-cursale-orange-400">
-                        Cursale adapts and acts in seconds.
+                    {t('secondaryCta.copy.before')}{' '}
+                    <span className="font-semibold text-ia-futurist-magenta">
+                        {t('secondaryCta.copy.highlight')}
                     </span>
                 </motion.p>
+
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:gap-6 lg:gap-8"
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="flex items-center justify-center"
                 >
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                    <Button
+                        variant="primary"
+                        onClick={() => scrollToSection('signup')}
+                        className="px-8 py-4 text-base sm:px-12 sm:py-5 sm:text-xl md:px-16 md:py-6 md:text-2xl lg:px-20 lg:py-7 lg:text-3xl"
                     >
-                        <Button
-                            variant="primary"
-                            onClick={() => scrollToSection('signup')}
-                            className="px-4 py-2 text-xs sm:px-6 sm:py-3 sm:text-sm md:px-8 md:py-4 md:text-base lg:px-10 lg:text-lg"
-                        >
-                            Start free now
-                        </Button>
-                    </motion.div>
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <Button
-                            variant="outline"
-                            onClick={() => scrollToSection('demo')}
-                            className="px-4 py-2 text-xs sm:px-6 sm:py-3 sm:text-sm md:px-8 md:py-4 md:text-base lg:px-10 lg:text-lg"
-                        >
-                            See Cursale in action
-                        </Button>
-                    </motion.div>
+                        {t('secondaryCta.cta')}
+                    </Button>
                 </motion.div>
             </div>
         </section>

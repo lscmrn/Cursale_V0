@@ -1,19 +1,17 @@
 import { IconType } from 'react-icons';
 import { FaUserPlus, FaChrome, FaDatabase, FaRegClipboard, FaRobot } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
-type Step = {
-    icon: IconType;
-    title: string;
-};
+type Step = { icon: IconType; title: string };
 
 export function useHowItWorks() {
+    const { t } = useTranslation();
     const steps: Step[] = [
-        { icon: FaUserPlus, title: 'Create your free account' },
-        { icon: FaChrome, title: 'Install the Chrome extension' },
-        { icon: FaDatabase, title: '(Optional) Connect your CRM' },
-        { icon: FaRegClipboard, title: '(Or) Give a quick briefing' },
-        { icon: FaRobot, title: 'Sell with real-time AI support' },
+        { icon: FaUserPlus, title: t('howItWorks.steps.createAccount') },
+        { icon: FaChrome, title: t('howItWorks.steps.installExtension') },
+        { icon: FaDatabase, title: t('howItWorks.steps.connectCRMOpt') },
+        { icon: FaRegClipboard, title: t('howItWorks.steps.quickBriefing') },
+        { icon: FaRobot, title: t('howItWorks.steps.sellWithAI') },
     ];
-
     return { steps };
 }

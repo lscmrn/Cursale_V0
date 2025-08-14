@@ -2,34 +2,215 @@
     "header": {
         "nav": {
             "about": "About",
-            "testimonials": "Testimonials",
-            "faqs": "FAQs",
-            "contact": "Contact",
-            "more": "More",
             "features": "Features",
             "advantages": "Advantages",
-            "howItWorks": "How It Works",
-            "secondaryCta": "Secondary CTA"
+            "howItWorks": "How it works"
         },
         "buttons": {
-            "signIn": "Sign In",
-            "signUp": "Sign Up"
+            "getStarted": "Get started now"
         }
     },
-    "languages": {
-        "en": "English",
-        "pt": "Portuguese",
-        "es": "Spanish"
-    },
     "footer": {
-        "links": {
-            "about": "About",
-            "pricing": "Pricing",
-            "contact": "Contact",
-            "login": "Login"
-        },
-        "description": "Cursale is your <strong>AI sales copilot</strong>. Boost <strong>B2B sales conversion</strong>, handle <strong>objections with AI</strong>, and get <strong>real-time suggestions</strong> during calls. Works as an <strong>AI-powered CRM assistant</strong>, a <strong>GPT sales extension</strong>, and automates <strong>follow-ups</strong> to improve inside sales performance.",
+        "tagline": "Real-time Sales AI",
         "rights": "All rights reserved",
-        "tagline": "Cursale - The AI Sales Copilot -"
+        "description": "Cursale helps sales teams sell more with less effort by delivering <strong>real-time guidance</strong>, CRM-aware workflows, and coaching for every call."
+    },
+    "hero": {
+        "title": "Your real-time sales copilot that makes every call a winning call.",
+        "subtitle": "Sell more with less effort. Cursale supports you on calls, suggests questions, addresses objections, and generates follow-ups that actually close deals.",
+        "cta": "Get started now",
+        "stat": {
+            "label": "More sales conversions"
+        }
+    },
+    "features": {
+        "heading": "Main Features",
+        "tabs": {
+            "seller": "Seller",
+            "manager": "Manager",
+            "operations": "Operations"
+        },
+        "seller": {
+            "items": {
+                "ai": {
+                    "title": "Real-Time AI in Video Calls",
+                    "desc": "Live suggestions during calls aligned with SPIN, BANT, and Challenger. Supports 89+ languages."
+                },
+                "immediate": {
+                    "title": "Immediate Results",
+                    "desc": "Give quick context—who the customer is and what you sell—and get instant guidance."
+                },
+                "crm": {
+                    "title": "Native CRM Integration",
+                    "desc": "Bring customer history and context into your workflow with zero copy-paste."
+                },
+                "followups": {
+                    "title": "Automatic Follow-Ups",
+                    "desc": "AI-generated emails, summaries, and next steps immediately after the call."
+                },
+                "objections": {
+                    "title": "Real-Time Objection Handling",
+                    "desc": "Detects barriers and offers ready-to-use counterarguments at the right moment."
+                },
+                "metrics": {
+                    "title": "Personal Metrics",
+                    "desc": "Track conversion, pitch adherence, and pipeline momentum in one place."
+                }
+            }
+        },
+        "manager": {
+            "items": {
+                "dash": {
+                    "title": "Manager Dashboards",
+                    "desc": "Live KPIs across the team: conversion, pitch adherence, win rate, and cycle time."
+                },
+                "analysis": {
+                    "title": "Performance Analysis",
+                    "desc": "Side-by-side comparisons by rep, segment, and timeframe to spot trends faster."
+                },
+                "efficiency": {
+                    "title": "Efficiency Insights",
+                    "desc": "Call length, follow-up cadence, and pipeline health to remove bottlenecks early."
+                },
+                "best": {
+                    "title": "Best-Practice Clips",
+                    "desc": "Curated snippets of top calls to coach the team with real examples."
+                },
+                "alerts": {
+                    "title": "Proactive Alerts",
+                    "desc": "Notifications for risk on key deals, stalled stages, and missed follow-ups."
+                },
+                "coaching": {
+                    "title": "Targeted Coaching",
+                    "desc": "Data-driven recommendations for scripts, talk ratio, and next actions per rep."
+                }
+            }
+        },
+        "operations": {
+            "items": {
+                "crm": {
+                    "title": "Native CRM Integration",
+                    "desc": "Field mapping, bi-directional sync, and pipeline-aware personalization."
+                },
+                "automation": {
+                    "title": "Workflow Automation",
+                    "desc": "Trigger follow-ups, tasks, and handoffs automatically based on deal events."
+                },
+                "apis": {
+                    "title": "APIs & Webhooks",
+                    "desc": "Extend Cursale into internal systems and data warehouses reliably."
+                },
+                "security": {
+                    "title": "Security & Compliance",
+                    "desc": "Access controls, audit trails, and policy-driven retention for recordings."
+                },
+                "loc": {
+                    "title": "Languages & Templates",
+                    "desc": "Multi-market response templates and terminology management at scale."
+                },
+                "reports": {
+                    "title": "Automated Reporting",
+                    "desc": "Scheduled summaries for leadership and stakeholders with zero manual work."
+                }
+            }
+        }
+    },
+    "cursaleInAction": {
+        "eyebrow": "Cursale in action",
+        "title": "You speak. Cursale listens, understands, and gives you the next best step to close.",
+        "copy": {
+            "a": "While other AIs make generic analyses or only work after the call is recorded,",
+            "b": "Cursale steps in when you need it most:",
+            "c": "during the real conversation with your client."
+        },
+        "cta": "Get started for free"
+    },
+    "howItWorks": {
+        "heading": "The Sales AI that thinks in frameworks and feels in real time.",
+        "subcopy": "Transform your sales process with intelligent AI that adapts to your CRM and provides real-time insights for maximum conversion.",
+        "cta": "Get started now!",
+        "steps": {
+            "s1": {
+                "title": "Install the Chrome extension and create your account",
+                "desc": "Quick setup in minutes with our powerful Chrome extension."
+            },
+            "s2": {
+                "title": "Get ready to sell! (Optional)",
+                "desc": "Give a simple briefing: who is the customer and what you sell."
+            },
+            "s3": {
+                "title": "Supercharge Cursale by connecting your CRM (Optional)",
+                "desc": "Seamless integration with your workflows."
+            },
+            "s4": {
+                "title": "Sell with real-time AI support",
+                "desc": "Get intelligent insights and frameworks while talking to prospects."
+            }
+        }
+    },
+    "advantages": {
+        "heading": { "pre": "Real", "highlight": "advantages", "post": "for your team" },
+        "subcopy": "Tangible gains in productivity, consistency and win-rates — from day one.",
+        "items": {
+            "a1": "+50% average conversion increase",
+            "a2": "+85% retention after the first month",
+            "a3": "NPS > 60",
+            "a4": "Real-time dashboards for leaders",
+            "a5": "Arguments based on validated frameworks",
+            "a6": "AI that learns from each seller's routine"
+        }
+    },
+    "testimonials": {
+        "heading": { "pre": "Who uses it,", "highlight": "never sells without it again" },
+        "items": {
+            "t1": {
+                "text": "“Cursale became my right hand. Today, I close more deals with less effort.”",
+                "name": "João G.",
+                "role": "Closer at NuvemData"
+            },
+            "t2": {
+                "text": "“I didn’t connect a CRM and still the AI gave me great arguments. Impressive.”",
+                "name": "Larissa M.",
+                "role": "SDR at FastTrack"
+            },
+            "t3": {
+                "text": "“Onboarding for new reps dropped from 3 months to 3 weeks.”",
+                "name": "Felipe A.",
+                "role": "Head of Sales at ConsultX"
+            }
+        }
+    },
+    "faq": {
+        "heading": { "pre": "Frequently Asked", "highlight": "Questions", "post": "" },
+        "items": {
+            "integrate": {
+                "q": "Do I need to integrate with my CRM to use Cursale?",
+                "a": "No. Integration is optional. A simple briefing already activates the AI with contextual suggestions."
+            },
+            "crms": {
+                "q": "Which CRMs are compatible?",
+                "a": "Salesforce, HubSpot, Pipedrive, Zoho, and any CRM with an open API."
+            },
+            "realtime": {
+                "q": "Does Cursale work in real time?",
+                "a": "Yes. Suggestions appear during the call, in real time."
+            },
+            "secure": {
+                "q": "Is it secure?",
+                "a": "Yes. Everything is encrypted and compliant with GDPR and LGPD."
+            },
+            "training": {
+                "q": "Do I need to train the AI with lots of data?",
+                "a": "No. Provide basic context about the client and the product. Cursale understands and acts."
+            }
+        }
+    },
+    "secondaryCta": {
+        "heading": { "pre": "With or without CRM,", "highlight": "you sell more with Cursale" },
+        "copy": {
+            "before": "Get AI-powered help based on your data — or simply tell us who the client is and what you’re selling.",
+            "highlight": "Cursale adapts and acts in seconds."
+        },
+        "cta": "Start free now"
     }
 }

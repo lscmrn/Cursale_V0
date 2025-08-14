@@ -1,63 +1,77 @@
 import { motion } from 'framer-motion';
 import { FaStar } from 'react-icons/fa';
 import { useTestimonials } from '@/hooks/useTestimonials';
+import { useTranslation } from 'react-i18next';
+
+const gradients = [
+    'bg-gradient-ia-card',
+    'bg-gradient-ia-peach-cyan',
+    'bg-gradient-ia-glow-light',
+    'bg-gradient-ia-softblue-glow',
+    'bg-gradient-ia-light',
+];
+
 export default function Testimonials() {
     const { testimonials } = useTestimonials();
+    const { t } = useTranslation();
+
     return (
         <section
             id="testimonials"
-            className="relative w-full py-10 sm:py-14 md:py-20 lg:py-28"
+            aria-labelledby="testimonials-heading"
+            className="relative w-full bg-white py-10 font-poppins sm:py-14 md:py-20 lg:py-28"
         >
-            <div className="container text-center">
+            <div className="container mx-auto max-w-7xl px-4 text-center">
                 <motion.h2
+                    id="testimonials-heading"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="mb-6 text-2xl font-bold text-ia-futurist-purple sm:mb-8 sm:text-3xl md:mb-10 md:text-4xl lg:text-5xl"
+                    className="mb-6 text-3xl font-bold text-brand-purple sm:mb-8 sm:text-4xl md:mb-10 md:text-5xl"
                 >
-                    Who uses it,{' '}
-                    <span className="text-ia-classic-deep">never sells without it again</span>
+                    {t('testimonials.heading.pre')}{' '}
+                    <span className="text-ia-classic-deep">
+                        {t('testimonials.heading.highlight')}
+                    </span>
                 </motion.h2>
-                <motion.div
-                    drag="x"
-                    dragConstraints={{ left: -400, right: 0 }}
-                    className="flex cursor-grab gap-4 overflow-hidden p-4 active:cursor-grabbing sm:gap-6 sm:p-6 md:p-8 lg:p-10"
-                >
-                    <div className="flex gap-4 sm:gap-6">
-                        {testimonials.map((item, index) => (
-                            <motion.div
-                                key={item.name}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.6,
-                                    delay: index * 0.2,
-                                    type: 'spring',
-                                    stiffness: 120,
-                                }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                whileHover={{ scale: 1.05 }}
-                                className="text-cursale-blue-50 shadow-cursale-blue-700/40 scrollbar-hidden min-w-[240px] rounded-2xl bg-gradient-ia-cyberpunk-neonBlue p-4 text-left shadow-lg sm:min-w-[280px] sm:p-5 md:min-w-[320px] md:p-6 lg:min-w-[360px]"
-                            >
-                                <div className="mb-2 flex text-sm text-ia-cyberpunk-darkBlue sm:text-base lg:text-lg">
-                                    {Array(5)
-                                        .fill(0)
-                                        .map((_, i) => (
-                                            <FaStar key={i} />
-                                        ))}
-                                </div>
-                                <p className="mb-3 text-[0.8rem] italic leading-relaxed sm:text-base md:text-lg">
-                                    {item.text}
-                                </p>
-                                <div className="text-cursale-blue-200 text-[0.7rem] sm:text-sm md:text-base">
-                                    <span className="font-bold text-fuchsia-100">{item.name}</span>,{' '}
-                                    {item.role}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+
+                <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {testimonials.map((item, index) => (
+                        <motion.div
+                            key={item.textKey}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.06 }}
+                            viewport={{ once: true, amount: 0.25 }}
+                            whileHover={{ scale: 1.02 }}
+                            className={`rounded-3xl p-5 text-left shadow-lg ring-1 ring-black/5 sm:p-6 ${gradients[index % gradients.length]}`}
+                        >
+                            <div className="mb-2 flex text-brand-purple">
+                                {Array(5)
+                                    .fill(0)
+                                    .map((_, i) => (
+                                        <FaStar
+                                            key={i}
+                                            aria-hidden
+                                            className="h-4 w-4 sm:h-5 sm:w-5"
+                                        />
+                                    ))}
+                            </div>
+
+                            <p className="mb-3 text-[0.9rem] italic leading-relaxed text-brand-body900 sm:text-base md:text-lg">
+                                {t(item.textKey)}
+                            </p>
+
+                            <div className="text-[0.8rem] text-brand-body900/80 sm:text-sm md:text-base">
+                                <span className="font-bold text-ia-cyberpunk-neonMagenta">
+                                    {t(item.nameKey)}
+                                </span>
+                                , {t(item.roleKey)}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

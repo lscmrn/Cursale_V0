@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 export function useHeader() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -13,10 +12,8 @@ export function useHeader() {
 
     const toggleMenu = () => setMenuOpen((prev) => !prev);
     const closeMenu = () => setMenuOpen(false);
-    const toggleDropdown = () => setDropdownOpen((prev) => !prev);
 
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
     const scrollToSection = (id: string) => {
         const section = document.getElementById(id);
         if (section) section.scrollIntoView({ behavior: 'smooth' });
@@ -29,22 +26,13 @@ export function useHeader() {
         { key: 'howItWorks', id: 'how-it-works' },
     ];
 
-    const dropdownItems = [
-        { key: 'secondaryCta', id: 'secondary-cta' },
-        { key: 'testimonials', id: 'testimonials' },
-        { key: 'faqs', id: 'faqs' },
-    ];
-
     return {
         scrolled,
         menuOpen,
-        dropdownOpen,
         toggleMenu,
-        toggleDropdown,
         closeMenu,
         scrollToSection,
         scrollToTop,
         mainNavItems,
-        dropdownItems,
     };
 }

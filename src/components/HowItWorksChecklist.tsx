@@ -1,69 +1,67 @@
-import CursaleMascot from '@/assets/images/icons/cursale-task.svg';
+import type { FC } from 'react';
+import { FiChrome, FiEdit3, FiLink, FiZap } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
-export default function HowItWorksChecklist() {
-    const steps = [
-        {
-            number: '1',
-            text: 'Install the Chrome extension and create your account',
-        },
-        {
-            number: '2',
-            text: (
-                <>
-                    Get ready to sell! <br />
-                    <span className="text-sm font-normal ">
-                        Give a simple briefing: who is the customer, what do you sell
-                        <br />
-                        (Optional)
-                    </span>
-                </>
-            ),
-        },
-        {
-            number: '3',
-            text: (
-                <>
-                    Supercharge Cursale by connecting your CRM
-                    <br />
-                    <span className="text-sm font-normal">(Optional)</span>
-                </>
-            ),
-        },
-        {
-            number: '4',
-            text: 'Sell with real-time AI support',
-        },
-    ];
+type StepDef = {
+    id: number;
+    Icon: React.ComponentType<{ className?: string; 'aria-hidden'?: boolean }>;
+    titleKey: string;
+    descKey: string;
+};
 
+const STEP_DEFS: StepDef[] = [
+    {
+        id: 1,
+        Icon: FiChrome,
+        titleKey: 'howItWorksChecklist.steps.install.title',
+        descKey: 'howItWorksChecklist.steps.install.desc',
+    },
+    {
+        id: 2,
+        Icon: FiEdit3,
+        titleKey: 'howItWorksChecklist.steps.briefing.title',
+        descKey: 'howItWorksChecklist.steps.briefing.desc',
+    },
+    {
+        id: 3,
+        Icon: FiLink,
+        titleKey: 'howItWorksChecklist.steps.crm.title',
+        descKey: 'howItWorksChecklist.steps.crm.desc',
+    },
+    {
+        id: 4,
+        Icon: FiZap,
+        titleKey: 'howItWorksChecklist.steps.sell.title',
+        descKey: 'howItWorksChecklist.steps.sell.desc',
+    },
+];
+
+const HowItWorksChecklist: FC = () => {
+    const { t } = useTranslation();
     return (
-        <div className="flex flex-col items-center justify-center gap-10 text-center text-ia-cyberpunk-darkBlue">
-            <h2 className="text-2xl font-bold text-ia-futurist-magenta sm:text-3xl md:text-4xl">
-                Get started now!
-            </h2>
-
-            <div className="grid w-full max-w-3xl grid-cols-1 gap-10 sm:grid-cols-2">
-                {steps.map((step, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col items-center gap-3"
-                    >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500 font-bold text-white">
-                            {step.number}
+        <ol className="grid w-full max-w-5xl grid-cols-1 gap-6 font-poppins sm:grid-cols-2 lg:grid-cols-4">
+            {STEP_DEFS.map(({ id, titleKey, descKey, Icon }) => (
+                <li
+                    key={id}
+                    className="group rounded-3xl bg-white p-5 text-left shadow-sm ring-1 ring-brand-blue/20 transition hover:shadow-lg hover:shadow-brand-purple/30"
+                >
+                    <div className="flex items-start justify-between">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-ia-mirror font-bold text-white">
+                            {id}
                         </div>
-                        <p className="text-lg font-semibold leading-snug text-ia-cyberpunk-darkBlue">
-                            {step.text}
-                        </p>
+                        <Icon
+                            aria-hidden
+                            className="h-6 w-6 text-brand-purple opacity-90 transition group-hover:opacity-100"
+                        />
                     </div>
-                ))}
-            </div>
-
-            <div className="mt-12 flex justify-center">
-                <img
-                    src={CursaleMascot}
-                    alt="Cursale Mascot"
-                    className="w-[160px] sm:w-[180px] md:w-[200px]"
-                />
-            </div>
-        </div>
+                    <h3 className="mt-4 text-lg font-semibold leading-snug text-brand-body900">
+                        {t(titleKey)}
+                    </h3>
+                    <p className="mt-2 text-sm text-brand-body900/85">{t(descKey)}</p>
+                </li>
+            ))}
+        </ol>
     );
-}
+};
+
+export default HowItWorksChecklist;

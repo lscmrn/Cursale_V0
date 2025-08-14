@@ -1,59 +1,87 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 import { useFAQ } from '@/hooks/useFAQ';
+import { useTranslation } from 'react-i18next';
+
 export default function FAQ() {
     const { faqs, openIndex, toggleFAQ } = useFAQ();
+    const { t } = useTranslation();
+
     return (
         <section
             id="faq"
-            className="relative w-full py-10 sm:py-14 md:py-20 lg:py-28"
+            className="w-full bg-gradient-cursale-light py-8 font-poppins sm:py-12 md:py-16 lg:py-20"
+            aria-labelledby="faq-heading"
         >
-            <div className="container">
-                <h2 className="mb-6 text-center text-2xl font-bold text-cursale-blue-900 sm:mb-8 sm:text-3xl md:mb-10 md:text-4xl lg:text-5xl">
-                    Frequently Asked <span className="text-cursale-orange-900">Questions</span>
+            <div className="container mx-auto max-w-4xl px-4">
+                <h2
+                    id="faq-heading"
+                    className="mb-6 text-center text-3xl font-extrabold leading-tight text-brand-body900 sm:mb-8 sm:text-4xl md:mb-10 md:text-5xl"
+                >
+                    {t('faq.heading.pre')}{' '}
+                    <span className="bg-gradient-to-r from-ia-futurist-purple via-ia-cyberpunk-neonPurple to-ia-futurist-magenta bg-clip-text text-transparent">
+                        {t('faq.heading.highlight')}
+                    </span>{' '}
+                    {t('faq.heading.post')}
                 </h2>
-                <div className="space-y-3 sm:space-y-4 md:space-y-5">
-                    {faqs.map((faq, index) => (
-                        <motion.div
-                            key={faq.question}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="overflow-hidden rounded-xl bg-gradient-blue-50 shadow-md"
-                        >
-                            <button
-                                onClick={() => toggleFAQ(index)}
-                                className="flex w-full items-center justify-between p-3 text-left focus:outline-none sm:p-4 md:p-5"
+
+                <dl className="space-y-3 sm:space-y-4 md:space-y-5">
+                    {faqs.map((faq, index) => {
+                        const isOpen = openIndex === index;
+                        const panelId = `faq-panel-${index}`;
+                        const buttonId = `faq-trigger-${index}`;
+                        return (
+                            <motion.div
+                                key={faq.qKey}
+                                initial={{ opacity: 0, y: 12 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.35, delay: index * 0.06 }}
+                                className="overflow-hidden rounded-2xl bg-gradient-ia-card shadow-md ring-1 ring-black/5"
                             >
-                                <span className="text-sm font-semibold text-cursale-blue-900 sm:text-base md:text-lg lg:text-xl">
-                                    {faq.question}
-                                </span>
-                                <motion.div
-                                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="text-sm text-cursale-blue-700 sm:text-base md:text-lg"
-                                >
-                                    <FaChevronDown />
-                                </motion.div>
-                            </button>
-                            <AnimatePresence initial={false}>
-                                {openIndex === index && (
-                                    <motion.div
-                                        key="content"
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: 'auto', opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.4 }}
-                                        className="px-3 pb-3 text-[0.8rem] text-cursale-blue-700 sm:px-4 sm:pb-4 sm:text-sm md:px-5 md:pb-5 md:text-base lg:text-lg"
+                                <dt>
+                                    <button
+                                        id={buttonId}
+                                        aria-expanded={isOpen}
+                                        aria-controls={panelId}
+                                        onClick={() => toggleFAQ(index)}
+                                        className="flex w-full items-center justify-between gap-4 p-4 text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-purple/25 sm:p-5"
                                     >
-                                        {faq.answer}
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.div>
-                    ))}
-                </div>
+                                        <span className="text-base font-semibold text-brand-body900 sm:text-lg md:text-xl">
+                                            {t(faq.qKey)}
+                                        </span>
+                                        <motion.span
+                                            animate={{ rotate: isOpen ? 180 : 0 }}
+                                            transition={{ duration: 0.25 }}
+                                            className="text-brand-body900/70"
+                                            aria-hidden
+                                        >
+                                            <FaChevronDown />
+                                        </motion.span>
+                                    </button>
+                                </dt>
+
+                                <AnimatePresence initial={false}>
+                                    {isOpen && (
+                                        <motion.dd
+                                            key="content"
+                                            id={panelId}
+                                            role="region"
+                                            aria-labelledby={buttonId}
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: 'auto', opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="px-4 pb-4 text-sm text-brand-body900/85 sm:px-5 sm:pb-5 sm:text-base"
+                                        >
+                                            <div className="pt-0.5">{t(faq.aKey)}</div>
+                                        </motion.dd>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        );
+                    })}
+                </dl>
             </div>
         </section>
     );

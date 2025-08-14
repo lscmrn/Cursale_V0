@@ -1,111 +1,150 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import type { PersonaKey } from '@/hooks/useFeatures';
 import { useFeatures } from '@/hooks/useFeatures';
-import CursaleFeatures from '@/assets/images/icons/cursale-features.svg';
+import { useTranslation } from 'react-i18next';
+import iconSeller from '@/assets/images/icons/cursale-ai.svg';
+import iconManager from '@/assets/images/icons/cursale-task.svg';
+import iconOperations from '@/assets/images/icons/cursale-sound.svg';
+
+const classes = {
+    heading: 'text-brand-purple800',
+    title: 'text-brand-purple700',
+    body: 'text-brand-body900',
+    cardBase:
+        'rounded-3xl bg-gradient-ia-card p-5 shadow-md ring-1 ring-black/5 backdrop-blur-sm hover:shadow-lg',
+    heroBase: 'rounded-3xl bg-white/90 p-6 shadow-xl ring-1 ring-black/10 backdrop-blur-md md:p-8',
+    tabsWrap:
+        'mx-auto mt-6 flex w-full max-w-3xl items-center justify-center gap-2 rounded-2xl bg-white/90 p-1 shadow-sm ring-1 ring-black/5 backdrop-blur',
+    tab: 'w-full rounded-xl px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-purple/30',
+    tabOn: 'bg-gradient-ia-mirror text-white shadow-sm',
+    tabOff: 'text-brand-purple hover:bg-brand-purple/10',
+};
+
+const heroIconByPersona: Record<PersonaKey, string> = {
+    seller: iconSeller,
+    manager: iconManager,
+    operations: iconOperations,
+};
 
 export default function Features() {
-    const { features } = useFeatures();
-    const [activeIndex, setActiveIndex] = useState(0);
-    const activeFeature = features[activeIndex];
+    const personas = useFeatures();
+    const [active, setActive] = useState<PersonaKey>('seller');
+    const { t } = useTranslation();
+
+    const { items, heroIndex } = personas[active];
+    const hero = items[heroIndex];
+    const others = items.filter((_, i) => i !== heroIndex);
 
     return (
         <section
             id="features"
-            className="w-full py-4 sm:py-8 md:py-12 lg:py-16 xl:py-20"
+            className="w-full bg-gradient-cursale-light py-8 font-poppins sm:py-12 md:py-16 lg:py-20"
+            aria-labelledby="features-heading"
         >
-            <div className="container flex flex-col items-center justify-center">
-                <h2 className="pb-4 font-poppins text-3xl font-bold text-[#6A00E6] sm:text-4xl md:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem]">
-                    Main Features
+            <div className="container mx-auto px-4">
+                <h2
+                    id="features-heading"
+                    className={`text-center text-3xl font-bold sm:text-4xl lg:text-5xl ${classes.heading}`}
+                >
+                    {t('features.heading')}
                 </h2>
-                <p className="py-8 text-base text-[#3d1a63] sm:mb-10 sm:text-lg md:mb-12 md:text-xl lg:text-2xl">
-                    Everything the seller needs. Where they need it most.
-                </p>
 
-                {/* Layout em abas (mobile only) */}
-                <div className="w-full px-4 sm:hidden">
-                    {/* Abas */}
-                    <div className="mb-6 flex flex-wrap justify-center gap-2">
-                        {features.map((feature, idx) => (
+                <div
+                    role="tablist"
+                    aria-label="Feature personas"
+                    className={classes.tabsWrap}
+                >
+                    {(['seller', 'manager', 'operations'] as PersonaKey[]).map((key) => {
+                        const selected = active === key;
+                        return (
                             <button
-                                key={feature.id}
-                                onClick={() => setActiveIndex(idx)}
-                                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
-                                    idx === activeIndex
-                                        ? 'bg-[#6A00E6] text-white'
-                                        : 'bg-gray-100 text-[#6A00E6]'
-                                }`}
+                                key={key}
+                                role="tab"
+                                aria-selected={selected}
+                                aria-controls={`panel-${key}`}
+                                id={`tab-${key}`}
+                                onClick={() => setActive(key)}
+                                className={`${classes.tab} ${selected ? classes.tabOn : classes.tabOff}`}
                             >
-                                {feature.title}
+                                {t(`features.tabs.${key}`)}
                             </button>
-                        ))}
-                    </div>
+                        );
+                    })}
+                </div>
 
-                    {/* Conteúdo da aba ativa */}
+                <AnimatePresence mode="wait">
                     <motion.div
-                        key={activeFeature.id}
-                        className="rounded-2xl bg-gradient-ia-card p-6 text-center shadow-md ring-1 ring-white/20 backdrop-blur-md"
-                        initial={{ opacity: 0, y: 20 }}
+                        key={active}
+                        role="tabpanel"
+                        id={`panel-${active}`}
+                        aria-labelledby={`tab-${active}`}
+                        initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.25 }}
+                        className="mt-10 grid grid-cols-1 items-center gap-6 md:mt-12 md:grid-cols-3"
                     >
-                        <h3 className="mb-2 text-lg font-bold text-[#6A00E6]">
-                            {activeFeature.title}
-                        </h3>
-                        <p className="text-sm text-[#1e1b3b]">{activeFeature.description}</p>
-                    </motion.div>
-                </div>
-
-                {/* Layout circular (desktop) */}
-                <div className="relative mx-auto hidden h-[720px] w-full max-w-7xl sm:block">
-                    {/* Mascot */}
-                    <div className="absolute left-1/2 top-1/2 z-10 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2">
-                        <img
-                            src={CursaleFeatures}
-                            alt="Features Mascot"
-                            className="h-full w-full animate-pulse object-contain"
-                        />
-                    </div>
-
-                    {/* Connection lines */}
-                    {Array(6)
-                        .fill(null)
-                        .map((_, i) => (
-                            <div
-                                key={i}
-                                className="absolute left-1/2 top-1/2 h-[2px] w-[120px] origin-left bg-gradient-to-r from-[#6A00E6] to-transparent opacity-40"
-                                style={{
-                                    transform: `rotate(${i * 60}deg) translateX(90px)`,
-                                    transformOrigin: 'left center',
-                                }}
-                            />
-                        ))}
-
-                    {/* Features (desktop) */}
-                    {features.map((feature, index) => (
-                        <motion.div
-                            key={feature.id}
-                            id={feature.id}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                        <motion.article
+                            layout
+                            aria-labelledby={hero.titleId}
+                            aria-describedby={hero.descId}
+                            className={`order-1 md:order-none md:col-span-2 md:row-span-2 ${classes.heroBase}`}
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className={`absolute w-72 rounded-2xl bg-gradient-ia-card p-1 text-center shadow-md ring-1 ring-white/20 backdrop-blur-md ${feature.position}`}
+                            transition={{ duration: 0.35 }}
                         >
-                            <h3
-                                id={feature.titleId}
-                                className="text-md md:text-md mb-2 font-bold text-[#6A00E6] sm:text-sm lg:text-lg xl:text-xl"
+                            <div className="flex flex-col items-center gap-4 md:flex-row">
+                                <img
+                                    src={heroIconByPersona[active]}
+                                    alt={`${active} hero icon`}
+                                    className="h-40 w-40 object-contain"
+                                />
+                                <div>
+                                    <h3
+                                        id={hero.titleId}
+                                        className={`text-center text-xl font-bold md:text-left md:text-2xl lg:text-3xl ${classes.title}`}
+                                    >
+                                        {t(hero.titleKey)}
+                                    </h3>
+                                    <p
+                                        id={hero.descId}
+                                        className={`mt-2 md:text-lg ${classes.body}`}
+                                    >
+                                        {t(hero.descKey)}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.article>
+
+                        {others.map((f, i) => (
+                            <motion.article
+                                key={f.id}
+                                aria-labelledby={f.titleId}
+                                aria-describedby={f.descId}
+                                className={classes.cardBase}
+                                initial={{ opacity: 0, y: 12 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.3, delay: 0.05 * i }}
                             >
-                                {feature.title}
-                            </h3>
-                            <p
-                                id={feature.descId}
-                                className="text-[#1e1b3b] sm:text-xs md:text-sm lg:text-base xl:text-[0.95rem]"
-                            >
-                                {feature.description}
-                            </p>
-                        </motion.div>
-                    ))}
-                </div>
+                                <h3
+                                    className={`text-lg font-semibold md:text-xl ${classes.title}`}
+                                    id={f.titleId}
+                                >
+                                    {t(f.titleKey)}
+                                </h3>
+                                <p
+                                    className={`mt-2 ${classes.body}`}
+                                    id={f.descId}
+                                >
+                                    {t(f.descKey)}
+                                </p>
+                            </motion.article>
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
             </div>
         </section>
     );

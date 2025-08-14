@@ -2,34 +2,215 @@
     "header": {
         "nav": {
             "about": "Acerca de",
-            "testimonials": "Testimonios",
-            "faqs": "Preguntas Frecuentes",
-            "contact": "Contacto",
-            "more": "Más",
             "features": "Funciones",
             "advantages": "Ventajas",
-            "howItWorks": "Cómo Funciona",
-            "secondaryCta": "Llamada Secundaria"
+            "howItWorks": "Cómo funciona"
         },
         "buttons": {
-            "signIn": "Iniciar sesión",
-            "signUp": "Registrarse"
+            "getStarted": "Empieza ahora"
         }
     },
-    "languages": {
-        "en": "Inglés",
-        "pt": "Portugués",
-        "es": "Español"
-    },
     "footer": {
-        "links": {
-            "about": "Acerca de",
-            "pricing": "Precios",
-            "contact": "Contacto",
-            "login": "Iniciar sesión"
-        },
-        "description": "Cursale es tu <strong>copiloto de ventas con IA</strong>. Aumenta <strong>las conversiones B2B</strong>, maneja <strong>objeciones con IA</strong> y recibe <strong>sugerencias en tiempo real</strong> durante las llamadas. Funciona como un <strong>asistente CRM con IA</strong>, una <strong>extensión GPT de ventas</strong> y automatiza <strong>seguimientos</strong> para mejorar el rendimiento.",
+        "tagline": "IA de Ventas en Tiempo Real",
         "rights": "Todos los derechos reservados",
-        "tagline": "Cursale - El Copiloto de Ventas con IA -"
+        "description": "Cursale ayuda a los equipos de ventas a vender más con menos esfuerzo, ofreciendo <strong>guía en tiempo real</strong>, flujos con CRM y coaching en cada llamada."
+    },
+    "hero": {
+        "title": "Tu copiloto de ventas en tiempo real que convierte cada llamada en una victoria.",
+        "subtitle": "Vende más con menos esfuerzo. Cursale te acompaña en las llamadas, sugiere preguntas, maneja objeciones y genera follow-ups que realmente cierran.",
+        "cta": "Empieza ahora",
+        "stat": {
+            "label": "Más conversiones de ventas"
+        }
+    },
+    "features": {
+        "heading": "Funciones principales",
+        "tabs": {
+            "seller": "Vendedor",
+            "manager": "Gestor",
+            "operations": "Operaciones"
+        },
+        "seller": {
+            "items": {
+                "ai": {
+                    "title": "IA en tiempo real en videollamadas",
+                    "desc": "Sugerencias en vivo alineadas con SPIN, BANT y Challenger. Soporte a 89+ idiomas."
+                },
+                "immediate": {
+                    "title": "Resultados inmediatos",
+                    "desc": "Da un contexto rápido—quién es el cliente y qué vendes—y recibe guía al instante."
+                },
+                "crm": {
+                    "title": "Integración nativa con el CRM",
+                    "desc": "Trae historial y contexto del cliente sin copiar y pegar."
+                },
+                "followups": {
+                    "title": "Seguimientos automáticos",
+                    "desc": "Emails, resúmenes y próximos pasos generados por IA tras la llamada."
+                },
+                "objections": {
+                    "title": "Manejo de objeciones en tiempo real",
+                    "desc": "Detecta barreras y ofrece contraargumentos listos en el momento oportuno."
+                },
+                "metrics": {
+                    "title": "Métricas personales",
+                    "desc": "Sigue conversión, adherencia al pitch y momentum del pipeline en un solo lugar."
+                }
+            }
+        },
+        "manager": {
+            "items": {
+                "dash": {
+                    "title": "Paneles para gestores",
+                    "desc": "KPIs en tiempo real: conversión, adherencia al pitch, win rate y ciclo."
+                },
+                "analysis": {
+                    "title": "Análisis de desempeño",
+                    "desc": "Comparaciones por vendedor, segmento y período para detectar tendencias."
+                },
+                "efficiency": {
+                    "title": "Insights de eficiencia",
+                    "desc": "Duración de llamadas, cadencia de seguimientos y salud del pipeline para quitar cuellos de botella."
+                },
+                "best": {
+                    "title": "Clips de mejores prácticas",
+                    "desc": "Entrena al equipo con fragmentos curados de las mejores llamadas."
+                },
+                "alerts": {
+                    "title": "Alertas proactivas",
+                    "desc": "Notificaciones de riesgo en deals, etapas estancadas y seguimientos perdidos."
+                },
+                "coaching": {
+                    "title": "Coaching dirigido",
+                    "desc": "Recomendaciones basadas en datos de script, talk ratio y próximas acciones por vendedor."
+                }
+            }
+        },
+        "operations": {
+            "items": {
+                "crm": {
+                    "title": "Integración nativa con el CRM",
+                    "desc": "Mapeo de campos, sincronización bidireccional y personalización sensible al pipeline."
+                },
+                "automation": {
+                    "title": "Automatización de flujos",
+                    "desc": "Dispara seguimientos, tareas y handoffs automáticamente según eventos del deal."
+                },
+                "apis": {
+                    "title": "APIs y Webhooks",
+                    "desc": "Extiende Cursale a sistemas internos y data warehouses con fiabilidad."
+                },
+                "security": {
+                    "title": "Seguridad y cumplimiento",
+                    "desc": "Controles de acceso, auditorías y retención basada en políticas."
+                },
+                "loc": {
+                    "title": "Idiomas y plantillas",
+                    "desc": "Plantillas multi-mercado y gestión de terminología a escala."
+                },
+                "reports": {
+                    "title": "Reportes automatizados",
+                    "desc": "Resúmenes programados para liderazgo y stakeholders sin trabajo manual."
+                }
+            }
+        }
+    },
+    "cursaleInAction": {
+        "eyebrow": "Cursale en acción",
+        "title": "Tú hablas. Cursale escucha, entiende y te da el siguiente mejor paso para cerrar.",
+        "copy": {
+            "a": "Mientras otras IAs hacen análisis genéricos o solo funcionan tras la grabación,",
+            "b": "Cursale actúa cuando más la necesitas:",
+            "c": "durante la conversación real con el cliente."
+        },
+        "cta": "Empieza gratis ahora"
+    },
+    "howItWorks": {
+        "heading": "La IA de ventas que piensa en frameworks y siente en tiempo real.",
+        "subcopy": "Transforma tu proceso de ventas con una IA que se adapta a tu CRM y ofrece insights en tiempo real para máxima conversión.",
+        "cta": "¡Empieza ahora!",
+        "steps": {
+            "s1": {
+                "title": "Instala la extensión de Chrome y crea tu cuenta",
+                "desc": "Configuración rápida en minutos."
+            },
+            "s2": {
+                "title": "¡Prepárate para vender! (Opcional)",
+                "desc": "Da un briefing simple: quién es el cliente y qué vendes."
+            },
+            "s3": {
+                "title": "Potencia conectando tu CRM (Opcional)",
+                "desc": "Integración fluida con tus flujos."
+            },
+            "s4": {
+                "title": "Vende con soporte de IA en tiempo real",
+                "desc": "Recibe insights y frameworks mientras hablas con prospectos."
+            }
+        }
+    },
+    "advantages": {
+        "heading": { "pre": "Ventajas", "highlight": "reales", "post": "para tu equipo" },
+        "subcopy": "Ganancias tangibles en productividad, consistencia y tasa de cierre desde el primer día.",
+        "items": {
+            "a1": "+50% de aumento medio en conversión",
+            "a2": "+85% de retención tras el primer mes",
+            "a3": "NPS > 60",
+            "a4": "Paneles en tiempo real para líderes",
+            "a5": "Argumentos basados en frameworks validados",
+            "a6": "IA que aprende de la rutina de cada vendedor"
+        }
+    },
+    "testimonials": {
+        "heading": { "pre": "Quien lo usa,", "highlight": "nunca vuelve a vender sin él" },
+        "items": {
+            "t1": {
+                "text": "“Cursale se convirtió en mi mano derecha. Hoy cierro más con menos esfuerzo.”",
+                "name": "João G.",
+                "role": "Closer en NuvemData"
+            },
+            "t2": {
+                "text": "“Ni conecté un CRM y la IA ya me dio grandes argumentos. Impresionante.”",
+                "name": "Larissa M.",
+                "role": "SDR en FastTrack"
+            },
+            "t3": {
+                "text": "“El onboarding de nuevos reps bajó de 3 meses a 3 semanas.”",
+                "name": "Felipe A.",
+                "role": "Head de Ventas en ConsultX"
+            }
+        }
+    },
+    "faq": {
+        "heading": { "pre": "Preguntas", "highlight": "Frecuentes", "post": "" },
+        "items": {
+            "integrate": {
+                "q": "¿Necesito integrar mi CRM para usar Cursale?",
+                "a": "No. La integración es opcional. Un briefing simple ya activa la IA con sugerencias contextuales."
+            },
+            "crms": {
+                "q": "¿Qué CRMs son compatibles?",
+                "a": "Salesforce, HubSpot, Pipedrive, Zoho y cualquier CRM con API abierta."
+            },
+            "realtime": {
+                "q": "¿Funciona en tiempo real?",
+                "a": "Sí. Las sugerencias aparecen durante la llamada, en tiempo real."
+            },
+            "secure": {
+                "q": "¿Es seguro?",
+                "a": "Sí. Todo está encriptado y cumple con GDPR y LGPD."
+            },
+            "training": {
+                "q": "¿Debo entrenar la IA con muchos datos?",
+                "a": "No. Brinda el contexto básico del cliente y del producto. Cursale entiende y actúa."
+            }
+        }
+    },
+    "secondaryCta": {
+        "heading": { "pre": "Con o sin CRM,", "highlight": "vendes más con Cursale" },
+        "copy": {
+            "before": "Obtén ayuda con IA basada en tus datos — o simplemente dinos quién es el cliente y qué vendes.",
+            "highlight": "Cursale se adapta y actúa en segundos."
+        },
+        "cta": "Empieza gratis ahora"
     }
 }

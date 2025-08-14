@@ -1,66 +1,155 @@
-export function useFeatures() {
-    const features = [
-        {
-            id: 'feature-ai',
-            title: 'Real-Time AI in Video Calls',
-            titleId: 'feature-title-ai',
-            descId: 'feature-desc-ai',
-            description:
-                'Live suggestions during the call, based on key sales methodologies such as SPIN, BANT, and Challenger. Available in 89 languages.',
-            position:
-                'sm:top-[10%] sm:left-[0%] md:top-[10%] md:left-[5%] lg:top-[1%] lg:left-[20%] xl:top-[10%] xl:left-[20%] 2xl:top-[8%] 2xl:left-[28%] 3xl:top-[5%] 3xl:left-[20%] -translate-x-1/2',
-        },
-        {
-            id: 'feature-immediate-results',
-            title: 'Immediate Results',
-            titleId: 'feature-title-immediate-results',
-            descId: 'feature-desc-immediate-results',
-            description:
-                'Give Cursale quick context—such as who the customer is and what you sell—and it immediately starts supporting you with intelligent suggestions.',
-            position:
-                'sm:top-[15%] sm:left-[58%] md:top-[15%] md:left-[58%] lg:top-[5%] lg:left-[58%] xl:top-[10%] xl:left-[55%] -translate-x-1/2',
-        },
-        {
-            id: 'feature-crm',
-            title: 'Native Integration with Your CRM',
-            titleId: 'feature-title-crm',
-            descId: 'feature-desc-crm',
-            description:
-                'Easily connect Cursale to your CRM for personalized suggestions, rich data, and sales-boosting automations.',
-            position:
-                'sm:top-[37%] sm:-left-[5%] md:top-[37%] md:-left-[3%] lg:top-[37%] lg:left-[5%] xl:top-[38%] xl:left-[12%] -translate-y-1/2',
-        },
-        {
-            id: 'feature-follow-ups',
-            title: 'Automatic Follow-Ups',
-            titleId: 'feature-title-follow-ups',
-            descId: 'feature-desc-follow-ups',
-            description:
-                'Intelligent generation of emails, summaries, and next steps. All right after the call.',
-            position:
-                'sm:bottom-[40%] sm:left-[65%] md:bottom-[40%] md:left-[70%] lg:bottom-[42%] lg:left-[70%] xl:bottom-[42%] xl:left-[67%] -translate-x-1/2',
-        },
-        {
-            id: 'feature-objections',
-            title: 'Real-Time Objection Handling',
-            titleId: 'feature-title-objections',
-            descId: 'feature-desc-objections',
-            description:
-                'AI detects barriers and delivers ready-to-use counterarguments at the right time.',
-            position:
-                'sm:top-[75%] sm:left-[0%] md:top-[75%] md:left-[5%] lg:top-[75%] lg:left-[10%] xl:top-[75%] xl:left-[20%] -translate-x-1/2',
-        },
-        {
-            id: 'feature-dashboards',
-            title: 'Dashboards for Managers',
-            titleId: 'feature-title-dashboards',
-            descId: 'feature-desc-dashboards',
-            description:
-                'Clear insight into performance, conversion, pitch adherence, and efficiency by salesperson—in real time.',
-            position:
-                'sm:top-[68%] sm:left-[60%] md:top-[68%] md:left-[58%]  lg:top-[68%] lg:left-[55%] xl:top-[68%] xl:left-[55%] translate-x-1/2',
-        },
-    ];
+export type Feature = {
+    id: string;
+    titleId: string;
+    descId: string;
+    titleKey: string;
+    descKey: string;
+};
+export type PersonaKey = 'seller' | 'manager' | 'operations';
+export type PersonaFeatures = { heroIndex: number; items: Feature[] };
 
-    return { features };
+export function useFeatures(): Record<PersonaKey, PersonaFeatures> {
+    return {
+        seller: {
+            heroIndex: 0,
+            items: [
+                {
+                    id: 'feature-ai',
+                    titleId: 'feature-title-ai',
+                    descId: 'feature-desc-ai',
+                    titleKey: 'features.seller.items.ai.title',
+                    descKey: 'features.seller.items.ai.desc',
+                },
+                {
+                    id: 'feature-immediate-results',
+                    titleId: 'feature-title-immediate-results',
+                    descId: 'feature-desc-immediate-results',
+                    titleKey: 'features.seller.items.immediateResults.title',
+                    descKey: 'features.seller.items.immediateResults.desc',
+                },
+                {
+                    id: 'feature-crm',
+                    titleId: 'feature-title-crm',
+                    descId: 'feature-desc-crm',
+                    titleKey: 'features.seller.items.crm.title',
+                    descKey: 'features.seller.items.crm.desc',
+                },
+                {
+                    id: 'feature-follow-ups',
+                    titleId: 'feature-title-follow-ups',
+                    descId: 'feature-desc-follow-ups',
+                    titleKey: 'features.seller.items.followUps.title',
+                    descKey: 'features.seller.items.followUps.desc',
+                },
+                {
+                    id: 'feature-objections',
+                    titleId: 'feature-title-objections',
+                    descId: 'feature-desc-objections',
+                    titleKey: 'features.seller.items.objections.title',
+                    descKey: 'features.seller.items.objections.desc',
+                },
+                {
+                    id: 'feature-dashboards-lite',
+                    titleId: 'feature-title-dashboards-lite',
+                    descId: 'feature-desc-dashboards-lite',
+                    titleKey: 'features.seller.items.dashboardsLite.title',
+                    descKey: 'features.seller.items.dashboardsLite.desc',
+                },
+            ],
+        },
+        manager: {
+            heroIndex: 0,
+            items: [
+                {
+                    id: 'feature-mgr-dashboards',
+                    titleId: 'feature-title-mgr-dashboards',
+                    descId: 'feature-desc-mgr-dashboards',
+                    titleKey: 'features.manager.items.dashboards.title',
+                    descKey: 'features.manager.items.dashboards.desc',
+                },
+                {
+                    id: 'feature-performance-analysis',
+                    titleId: 'feature-title-performance-analysis',
+                    descId: 'feature-desc-performance-analysis',
+                    titleKey: 'features.manager.items.performance.title',
+                    descKey: 'features.manager.items.performance.desc',
+                },
+                {
+                    id: 'feature-efficiency-insights',
+                    titleId: 'feature-title-efficiency-insights',
+                    descId: 'feature-desc-efficiency-insights',
+                    titleKey: 'features.manager.items.efficiency.title',
+                    descKey: 'features.manager.items.efficiency.desc',
+                },
+                {
+                    id: 'feature-best-practices',
+                    titleId: 'feature-title-best-practices',
+                    descId: 'feature-desc-best-practices',
+                    titleKey: 'features.manager.items.bestPractices.title',
+                    descKey: 'features.manager.items.bestPractices.desc',
+                },
+                {
+                    id: 'feature-proactive-alerts',
+                    titleId: 'feature-title-proactive-alerts',
+                    descId: 'feature-desc-proactive-alerts',
+                    titleKey: 'features.manager.items.alerts.title',
+                    descKey: 'features.manager.items.alerts.desc',
+                },
+                {
+                    id: 'feature-coaching',
+                    titleId: 'feature-title-coaching',
+                    descId: 'feature-desc-coaching',
+                    titleKey: 'features.manager.items.coaching.title',
+                    descKey: 'features.manager.items.coaching.desc',
+                },
+            ],
+        },
+        operations: {
+            heroIndex: 0,
+            items: [
+                {
+                    id: 'feature-ops-crm',
+                    titleId: 'feature-title-ops-crm',
+                    descId: 'feature-desc-ops-crm',
+                    titleKey: 'features.operations.items.crm.title',
+                    descKey: 'features.operations.items.crm.desc',
+                },
+                {
+                    id: 'feature-ops-automation',
+                    titleId: 'feature-title-ops-automation',
+                    descId: 'feature-desc-ops-automation',
+                    titleKey: 'features.operations.items.automation.title',
+                    descKey: 'features.operations.items.automation.desc',
+                },
+                {
+                    id: 'feature-ops-apis',
+                    titleId: 'feature-title-ops-apis',
+                    descId: 'feature-desc-ops-apis',
+                    titleKey: 'features.operations.items.apis.title',
+                    descKey: 'features.operations.items.apis.desc',
+                },
+                {
+                    id: 'feature-ops-security',
+                    titleId: 'feature-title-ops-security',
+                    descId: 'feature-desc-ops-security',
+                    titleKey: 'features.operations.items.security.title',
+                    descKey: 'features.operations.items.security.desc',
+                },
+                {
+                    id: 'feature-ops-localization',
+                    titleId: 'feature-title-ops-localization',
+                    descId: 'feature-desc-ops-localization',
+                    titleKey: 'features.operations.items.localization.title',
+                    descKey: 'features.operations.items.localization.desc',
+                },
+                {
+                    id: 'feature-ops-reports',
+                    titleId: 'feature-title-ops-reports',
+                    descId: 'feature-desc-ops-reports',
+                    titleKey: 'features.operations.items.reports.title',
+                    descKey: 'features.operations.items.reports.desc',
+                },
+            ],
+        },
+    };
 }

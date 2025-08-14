@@ -1,54 +1,76 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { useAdvantages } from '@/hooks/useAdvantages';
+import { useTranslation } from 'react-i18next';
+
+const listVariants: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 16, scale: 0.98 },
+    show: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { type: 'spring', stiffness: 120, damping: 18 },
+    },
+};
+
 export default function Advantages() {
     const { items } = useAdvantages();
+    const { t } = useTranslation();
+
     return (
         <section
             id="advantages"
-            className="relative w-full py-10 sm:py-14 md:py-20 lg:py-28"
+            className="w-full bg-gradient-cursale-light py-8 font-poppins sm:py-12 md:py-16 lg:py-20"
+            aria-labelledby="advantages-heading"
         >
-            <div className="container text-center">
+            <div className="container mx-auto max-w-7xl px-4 text-center">
                 <motion.h2
+                    id="advantages-heading"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
-                    className="mb-6 text-2xl font-bold text-ia-futurist-purple sm:mb-8 sm:text-3xl md:mb-10 md:text-4xl lg:text-5xl"
+                    className="mb-3 text-3xl font-extrabold leading-tight text-brand-body900 sm:text-4xl md:text-5xl"
                 >
-                    Real <span className="text-ia-classic-deep">advantages</span> for your team
+                    {t('advantages.heading.pre')}{' '}
+                    <span className="bg-gradient-to-r from-ia-futurist-purple via-ia-cyberpunk-neonPurple to-ia-futurist-magenta bg-clip-text text-transparent">
+                        {t('advantages.heading.highlight')}
+                    </span>{' '}
+                    {t('advantages.heading.post')}
                 </motion.h2>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:gap-8 lg:grid-cols-3">
-                    {items.map((item, index) => {
-                        const Icon = item.icon;
+
+                <p className="mx-auto mb-8 max-w-3xl text-sm text-brand-body900/80 sm:text-base md:mb-12">
+                    {t('advantages.subcopy')}
+                </p>
+
+                <motion.ol
+                    variants={listVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+                >
+                    {items.map((adv, idx) => {
+                        const Icon = adv.icon as React.ComponentType<{ className?: string }>;
                         return (
-                            <motion.div
-                                key={item.text}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: index * 0.15,
-                                    type: 'spring',
-                                    stiffness: 120,
-                                }}
-                                whileHover={{ scale: 1.05 }}
-                                className="text-cursale-orange-600 shadow-cursale-blue-800/30 flex flex-col items-center rounded-2xl bg-gradient-ia-softblue-glow p-4 text-center shadow-lg sm:p-5 md:p-6 lg:p-8"
+                            <motion.li
+                                key={adv.textKey ?? idx}
+                                variants={cardVariants}
+                                className="group h-full rounded-3xl bg-gradient-ia-card p-6 text-left shadow-md ring-1 ring-black/5 backdrop-blur-sm transition focus-within:-translate-y-0.5 focus-within:shadow-lg hover:-translate-y-0.5 hover:shadow-lg"
+                                tabIndex={0}
                             >
-                                <motion.div
-                                    whileHover={{ rotate: 5, scale: 1.2 }}
-                                    transition={{ type: 'spring', stiffness: 200 }}
-                                    className="mb-3 text-3xl text-ia-cyberpunk-neonPurple sm:mb-4 sm:text-4xl md:text-5xl"
-                                >
-                                    <Icon />
-                                </motion.div>
-                                <p className="text-sm font-medium sm:text-base md:text-lg lg:text-xl">
-                                    {item.text}
-                                </p>
-                            </motion.div>
+                                <div className="flex items-start gap-4">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-ia-btn-hero text-cursale-white shadow-sm ring-1 ring-white/30 transition group-hover:brightness-110">
+                                        {Icon ? <Icon className="h-6 w-6" /> : null}
+                                    </div>
+                                    <p className="mt-1 text-base font-semibold leading-snug text-brand-body900 sm:text-lg lg:text-xl">
+                                        {t(adv.textKey)}
+                                    </p>
+                                </div>
+                            </motion.li>
                         );
                     })}
-                </div>
+                </motion.ol>
             </div>
         </section>
     );

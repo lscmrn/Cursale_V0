@@ -1,27 +1,22 @@
-export type Testimonial = {
-    text: string;
-    name: string;
-    role: string;
-};
+export type Testimonial = { textKey: string; nameKey: string; roleKey: string };
 
 export function useTestimonials() {
     const testimonials: Testimonial[] = [
         {
-            text: '“Cursale became my right hand. Today, I close more deals with less effort.”',
-            name: 'João G.',
-            role: 'Closer at NuvemData',
+            textKey: 'testimonials.items.t1.text',
+            nameKey: 'testimonials.items.t1.name',
+            roleKey: 'testimonials.items.t1.role',
         },
         {
-            text: '“I didn’t connect a CRM and still the AI gave me great arguments. Impressive.”',
-            name: 'Larissa M.',
-            role: 'SDR at FastTrack',
+            textKey: 'testimonials.items.t2.text',
+            nameKey: 'testimonials.items.t2.name',
+            roleKey: 'testimonials.items.t2.role',
         },
         {
-            text: '“Onboarding for new reps dropped from 3 months to 3 weeks.”',
-            name: 'Felipe A.',
-            role: 'Head of Sales at ConsultX',
+            textKey: 'testimonials.items.t3.text',
+            nameKey: 'testimonials.items.t3.name',
+            roleKey: 'testimonials.items.t3.role',
         },
     ];
-
     return { testimonials };
 }
